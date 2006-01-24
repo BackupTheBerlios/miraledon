@@ -1,4 +1,4 @@
-// $Id: ProcessInformation.h,v 1.2 2006/01/24 09:32:40 gerrit-albrecht Exp $
+// $Id: ProcessInformation.h,v 1.3 2006/01/24 09:40:02 gerrit-albrecht Exp $
 //
 // Miraledon
 // Copyright (C) 2006 by Gerrit M. Albrecht
@@ -29,6 +29,14 @@ typedef BOOL (CALLBACK *PROCENUMPROC)(DWORD, WORD, LPTSTR, LPARAM);
 BOOL CALLBACK MyProcessEnumerator(DWORD dwPID, WORD wTask, LPCTSTR szProcess, LPARAM lParam);
 
 /// \brief Gets information about running processes.
+///
+/// This class retrieves information about running processes from the operating system. It's able to
+/// enumerate the processes calling a callback function once for each process. This function has to
+/// be defined by the user.
+///
+/// \author $Author: gerrit-albrecht $
+/// \version $Revision: 1.3 $
+/// \date $Date: 2006/01/24 09:40:02 $
 
 class CProcessInformation : public CObject
 {
