@@ -1,4 +1,4 @@
-// $Id: ProcessInformation.h,v 1.4 2006/01/24 09:56:34 gerrit-albrecht Exp $
+// $Id: ProcessInformation.h,v 1.5 2006/01/24 10:00:18 gerrit-albrecht Exp $
 //
 // Miraledon
 // Copyright (C) 2006 by Gerrit M. Albrecht
@@ -19,6 +19,7 @@
 // MA 02110-1301, USA.
 
 /// \file ProcessInformation.h
+/// \author Gerrit M. Albrecht
 
 #pragma once
 
@@ -33,12 +34,8 @@ BOOL CALLBACK MyProcessEnumerator(DWORD dwPID, WORD wTask, LPCTSTR szProcess, LP
 /// \brief Gets information about running processes.
 ///
 /// This class retrieves information about running processes from the operating system. It's able to
-/// enumerate the processes calling a callback function once for each process. This function has to
-/// be defined by the user.
-///
-/// \author $Author: gerrit-albrecht $
-/// \version $Revision: 1.4 $
-/// \date $Date: 2006/01/24 09:56:34 $
+/// enumerate the processes calling a callback function once for each process. The callback function
+/// has to be defined by the user.
 
 class CProcessInformation : public CObject
 {
