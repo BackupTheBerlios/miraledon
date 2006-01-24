@@ -1,4 +1,4 @@
-// $Id: ProcessInformation.h,v 1.5 2006/01/24 10:00:18 gerrit-albrecht Exp $
+// $Id: ProcessInformation.h,v 1.6 2006/01/24 10:48:48 gerrit-albrecht Exp $
 //
 // Miraledon
 // Copyright (C) 2006 by Gerrit M. Albrecht
@@ -20,6 +20,7 @@
 
 /// \file ProcessInformation.h
 /// \author Gerrit M. Albrecht
+/// \brief Contains the declaration of the CProcessInformation class.
 
 #pragma once
 
@@ -40,8 +41,18 @@ BOOL CALLBACK MyProcessEnumerator(DWORD dwPID, WORD wTask, LPCTSTR szProcess, LP
 class CProcessInformation : public CObject
 {
   public:
+    /// Standard constructor.
     CProcessInformation();
+
+    /// Destructor.
     virtual ~CProcessInformation();
 
+    /// Enumerates all processes and calls a callback function for each process.
+    ///
+    /// \param lpProc is a pointer to the callback function.
+    /// \param lParam is an arbitrary value which is passed to the callback function as a parameter.
+    ///        Here you may give a pointer to an object which you may reference from that function.
+    /// \return Returns TRUE on success and FALSE on error.
     BOOL EnumProcs32(PROCENUMPROC lpProc, LPARAM lParam);
 };
+

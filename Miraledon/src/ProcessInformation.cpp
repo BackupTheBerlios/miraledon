@@ -1,4 +1,4 @@
-// $Id: ProcessInformation.cpp,v 1.1 2006/01/24 08:39:35 gerrit-albrecht Exp $
+// $Id: ProcessInformation.cpp,v 1.2 2006/01/24 10:48:48 gerrit-albrecht Exp $
 //
 // Miraledon
 // Copyright (C) 2006 by Gerrit M. Albrecht
@@ -18,6 +18,10 @@
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 // MA 02110-1301, USA.
 
+/// \file ProcessInformation.cpp
+/// \author Gerrit M. Albrecht
+/// \brief Contains the definition of the CProcessInformation class.
+
 #include "StdAfx.h"
 #include "ProcessInformation.h"
 #include "OperatingSystem.h"
@@ -35,7 +39,7 @@ CProcessInformation::~CProcessInformation()
 {
 }
 
-// Enum processes the Microsoft way:
+// Enumerates processes the Microsoft way:
 // http://support.microsoft.com/default.aspx?scid=kb;en-us;Q175030
 
 BOOL CProcessInformation::EnumProcs32(PROCENUMPROC lpProc, LPARAM lParam)

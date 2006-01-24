@@ -1,4 +1,4 @@
-// $Id: OperatingSystem.cpp,v 1.1 2006/01/24 08:39:35 gerrit-albrecht Exp $
+// $Id: OperatingSystem.cpp,v 1.2 2006/01/24 10:48:48 gerrit-albrecht Exp $
 //
 // Miraledon
 // Copyright (C) 2006 by Gerrit M. Albrecht
@@ -17,6 +17,10 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 // MA 02110-1301, USA.
+
+/// \file OperatingSystem.cpp
+/// \author Gerrit M. Albrecht
+/// \brief Contains the definition of the COperatingSystem class.
 
 #include "StdAfx.h"
 #include "OperatingSystem.h"
