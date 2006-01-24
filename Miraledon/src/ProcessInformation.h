@@ -1,4 +1,4 @@
-// $Id: ProcessInformation.h,v 1.1 2006/01/24 08:39:35 gerrit-albrecht Exp $
+// $Id: ProcessInformation.h,v 1.2 2006/01/24 09:32:40 gerrit-albrecht Exp $
 //
 // Miraledon
 // Copyright (C) 2006 by Gerrit M. Albrecht
@@ -27,6 +27,8 @@
 typedef BOOL (CALLBACK *PROCENUMPROC)(DWORD, WORD, LPTSTR, LPARAM);
 
 BOOL CALLBACK MyProcessEnumerator(DWORD dwPID, WORD wTask, LPCTSTR szProcess, LPARAM lParam);
+
+/// \brief Gets information about running processes.
 
 class CProcessInformation : public CObject
 {
