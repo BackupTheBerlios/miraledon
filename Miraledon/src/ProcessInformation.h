@@ -1,4 +1,4 @@
-// $Id: ProcessInformation.h,v 1.3 2006/01/24 09:40:02 gerrit-albrecht Exp $
+// $Id: ProcessInformation.h,v 1.4 2006/01/24 09:56:34 gerrit-albrecht Exp $
 //
 // Miraledon
 // Copyright (C) 2006 by Gerrit M. Albrecht
@@ -18,6 +18,8 @@
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 // MA 02110-1301, USA.
 
+/// \file ProcessInformation.h
+
 #pragma once
 
 #include <windows.h>
@@ -35,8 +37,8 @@ BOOL CALLBACK MyProcessEnumerator(DWORD dwPID, WORD wTask, LPCTSTR szProcess, LP
 /// be defined by the user.
 ///
 /// \author $Author: gerrit-albrecht $
-/// \version $Revision: 1.3 $
-/// \date $Date: 2006/01/24 09:40:02 $
+/// \version $Revision: 1.4 $
+/// \date $Date: 2006/01/24 09:56:34 $
 
 class CProcessInformation : public CObject
 {
