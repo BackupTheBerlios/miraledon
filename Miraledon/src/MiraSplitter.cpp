@@ -1,4 +1,4 @@
-// $Id: MiraSplitter.cpp,v 1.1 2006/01/24 08:39:35 gerrit-albrecht Exp $
+// $Id: MiraSplitter.cpp,v 1.2 2006/01/24 16:40:55 gerrit-albrecht Exp $
 //
 // Miraledon
 // Copyright (C) 2006 by Gerrit M. Albrecht
@@ -31,6 +31,9 @@ END_MESSAGE_MAP()
 CMiraSplitter::CMiraSplitter()
 {
   EnableActiveAccessibility();
+
+  m_erase_background = false;
+  m_move_and_refresh = true;
 }
 
 CMiraSplitter::~CMiraSplitter()
@@ -40,82 +43,80 @@ CMiraSplitter::~CMiraSplitter()
 // HitTest return values (values and spacing between values is important)
 enum HitTestValue
 {
-	noHit                   = 0,
-	vSplitterBox            = 1,
-	hSplitterBox            = 2,
-	bothSplitterBox         = 3,        // just for keyboard
-	vSplitterBar1           = 101,
-	vSplitterBar15          = 115,
-	hSplitterBar1           = 201,
-	hSplitterBar15          = 215,
-	splitterIntersection1   = 301,
-	splitterIntersection225 = 525
+  noHit                   = 0,
+  vSplitterBox            = 1,
+  hSplitterBox            = 2,
+  bothSplitterBox         = 3,        // just for keyboard
+  vSplitterBar1           = 101,
+  vSplitterBar15          = 115,
+  hSplitterBar1           = 201,
+  hSplitterBar15          = 215,
+  splitterIntersection1   = 301,
+  splitterIntersection225 = 525
 };
 
 void CMiraSplitter::OnMouseMove(UINT nFlags, CPoint pt)
 {
-  if (GetCapture() != this)
+  if (GetCapture() != this)                      // Check if we own the mouse.
     StopTracking(FALSE);
 
-  if (m_bTracking && (nFlags == MK_LBUTTON)) {
-    pt.Offset(m_ptTrackOffset); // pt is the upper right of hit detect
+  if (! m_bTracking) {                           // Simply hit-test and set appropriate cursor.
+    SetSplitCursor(HitTest(pt));
+    return;
+  }
 
-    // limit the point to the valid split range
-		if (pt.y < m_rectLimit.top)
-			pt.y = m_rectLimit.top;
-		else if (pt.y > m_rectLimit.bottom)
-			pt.y = m_rectLimit.bottom;
-		if (pt.x < m_rectLimit.left)
-			pt.x = m_rectLimit.left;
-		else if (pt.x > m_rectLimit.right)
-			pt.x = m_rectLimit.right;
+  if ((m_pos_x == pt.x) && (m_pos_y == pt.y)) {  // New and old coordinates are equal.
+    TRACE("MouseMove: equal points\n");
+    return;
+  }
 
-        if (m_htTrack == vSplitterBox ||
-			m_htTrack >= vSplitterBar1 && m_htTrack <= vSplitterBar15)
-		{
-			if (m_rectTracker.top != pt.y)
-			{
+  if (nFlags == MK_LBUTTON) {
+    pt.Offset(m_ptTrackOffset);                  // pt is the upper right of hit detect.
+
+    if (pt.y < m_rectLimit.top)                  // Limit the point to the valid split range.
+      pt.y = m_rectLimit.top;
+    else if (pt.y > m_rectLimit.bottom)
+      pt.y = m_rectLimit.bottom;
+
+    if (pt.x < m_rectLimit.left)
+      pt.x = m_rectLimit.left;
+    else if (pt.x > m_rectLimit.right)
+      pt.x = m_rectLimit.right;
+
+    if (m_htTrack == vSplitterBox || m_htTrack >= vSplitterBar1 && m_htTrack <= vSplitterBar15) {
+			if (m_rectTracker.top != pt.y) {
 				OnInvertTracker(m_rectTracker);
 				m_rectTracker.OffsetRect(0, pt.y - m_rectTracker.top);
 				OnInvertTracker(m_rectTracker);
 			}
-		}
-		else if (m_htTrack == hSplitterBox ||
-			m_htTrack >= hSplitterBar1 && m_htTrack <= hSplitterBar15)
-		{
-			if (m_rectTracker.left != pt.x)
-			{
+    }
+    else if (m_htTrack == hSplitterBox || m_htTrack >= hSplitterBar1 && m_htTrack <= hSplitterBar15) {
+			if (m_rectTracker.left != pt.x) {
 				OnInvertTracker(m_rectTracker);
 				m_rectTracker.OffsetRect(pt.x - m_rectTracker.left, 0);
 				OnInvertTracker(m_rectTracker);
 			}
-		}
-		else if (m_htTrack == bothSplitterBox ||
-		   (m_htTrack >= splitterIntersection1 &&
-			m_htTrack <= splitterIntersection225))
-		{
-			if (m_rectTracker.top != pt.y)
-			{
+    }
+    else if (m_htTrack == bothSplitterBox || (m_htTrack >= splitterIntersection1 && m_htTrack <= splitterIntersection225)) {
+			if (m_rectTracker.top != pt.y) {
 				OnInvertTracker(m_rectTracker);
 				m_rectTracker.OffsetRect(0, pt.y - m_rectTracker.top);
 				OnInvertTracker(m_rectTracker);
 			}
-			if (m_rectTracker2.left != pt.x)
-			{
+			if (m_rectTracker2.left != pt.x) {
 				OnInvertTracker(m_rectTracker2);
 				m_rectTracker2.OffsetRect(pt.x - m_rectTracker2.left, 0);
 				OnInvertTracker(m_rectTracker2);
 			}
-		}
+    }
 
-        StopTracking(TRUE);
-      OnLButtonDown(0, pt);
-  }
-  else {   // simply hit-test and set appropriate cursor
-    SetSplitCursor(HitTest(pt));
+    StopTracking(TRUE);
+    OnLButtonDown(0, pt);
+
+    return;
   }
 
-  //CSplitterWnd::OnMouseMove(nFlags, pt);
+  CSplitterWnd::OnMouseMove(nFlags, pt);
 }
 
 // Store the mouse position on left click.
@@ -130,7 +131,8 @@ void CMiraSplitter::OnLButtonDown(UINT nFlags, CPoint pt)
 
 void CMiraSplitter::OnInvertTracker(const CRect& rect)
 {
-  return;
+  if (m_move_and_refresh)            // We don't need to paint an inverted tracker
+    return;                          // if we refresh after every mouse move.
 
   ASSERT_VALID(this);
   ASSERT(!rect.IsRectEmpty());
@@ -166,5 +168,8 @@ BOOL CMiraSplitter::OnEraseBkgnd(CDC* pDC)
 {
   UNUSED_ALWAYS(pDC);
 
-  return TRUE; //CSplitterWnd::OnEraseBkgnd(pDC);
+  if (m_erase_background)
+    return CSplitterWnd::OnEraseBkgnd(pDC);
+
+  return TRUE;
 }

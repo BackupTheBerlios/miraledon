@@ -1,4 +1,4 @@
-// $Id: MiraSplitter.h,v 1.2 2006/01/24 16:40:55 gerrit-albrecht Exp $
+// $Id: MiraListCtrl.h,v 1.1 2006/01/24 16:41:25 gerrit-albrecht Exp $
 //
 // Miraledon
 // Copyright (C) 2006 by Gerrit M. Albrecht
@@ -20,29 +20,25 @@
 
 #pragma once
 
-class CMiraSplitter : public CSplitterWnd
+class CMiraListCtrl : public CListCtrl
 {
+  DECLARE_DYNAMIC(CMiraListCtrl)
+
   public:
-    CMiraSplitter();
-    virtual ~CMiraSplitter();
+    CMiraListCtrl();
+    virtual ~CMiraListCtrl();
 
-    //{{AFX_VIRTUAL(CMiraSplitter)
-    //}}AFX_VIRTUAL
+    void AutoSizeColumn(int col);
+    void AutoSizeColumns();
+    int GetColumnCount() const;
+
+	BOOL AddColumn(LPCTSTR strItem,int nItem,int nSubItem = -1,
+                   int nMask = LVCF_FMT | LVCF_WIDTH | LVCF_TEXT | LVCF_SUBITEM,
+                   int nFmt = LVCFMT_LEFT);
+	BOOL AddItem(int nItem,int nSubItem,LPCTSTR strItem,int nImageIndex = -1);
+	BOOL ReplaceItem(int nItem,int nSubItem,LPCTSTR strItem,int nImageIndex = -1);
 
   protected:
-    int m_pos_x;
-    int m_pos_y;
-    bool m_erase_background;
-    bool m_move_and_refresh;
-
-  protected:
-    void OnInvertTracker(const CRect& rect);
-
-    afx_msg void OnMouseMove(UINT nFlags, CPoint pt);
-    afx_msg void OnLButtonDown(UINT nFlags, CPoint pt);
     DECLARE_MESSAGE_MAP()
 
-  public:
-    afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
-    afx_msg BOOL OnEraseBkgnd(CDC* pDC);
 };
