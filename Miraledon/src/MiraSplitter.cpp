@@ -1,4 +1,4 @@
-// $Id: MiraSplitter.cpp,v 1.2 2006/01/24 16:40:55 gerrit-albrecht Exp $
+// $Id: MiraSplitter.cpp,v 1.3 2006/01/25 13:51:52 gerrit-albrecht Exp $
 //
 // Miraledon
 // Copyright (C) 2006 by Gerrit M. Albrecht
@@ -159,7 +159,7 @@ int CMiraSplitter::OnCreate(LPCREATESTRUCT lpCreateStruct)
   if (CSplitterWnd::OnCreate(lpCreateStruct) == -1)
     return -1;
 
-  SetClassLong( m_hWnd, GCL_STYLE, GetClassLong( m_hWnd, GCL_STYLE ) & ~( CS_HREDRAW | CS_VREDRAW ));
+  SetClassLong(m_hWnd, GCL_STYLE, GetClassLong(m_hWnd, GCL_STYLE) & ~(CS_HREDRAW | CS_VREDRAW));
 
   return 0;
 }
