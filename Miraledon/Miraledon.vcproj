@@ -189,11 +189,39 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\src\FileVersionInfo.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\HyperlinkCtrl.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Miraledon.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\Miraledon.def"
+				>
+			</File>
+			<File
+				RelativePath=".\src\MiraListCtrl.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\MiraSplitter.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\MiraTreeCtrl.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\OperatingSystem.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\ProcessInformation.cpp"
 				>
 			</File>
 			<File
@@ -216,6 +244,14 @@
 					/>
 				</FileConfiguration>
 			</File>
+			<File
+				RelativePath=".\src\TreeListCtrl.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\TreeListView.cpp"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
@@ -223,11 +259,47 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
+				RelativePath=".\src\FileVersionInfo.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\HyperlinkCtrl.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\MiraListCtrl.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\MiraSplitter.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\MiraTreeCtrl.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\OperatingSystem.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\ProcessInformation.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Resource.h"
 				>
 			</File>
 			<File
 				RelativePath=".\StdAfx.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\TreeListCtrl.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\TreeListView.h"
 				>
 			</File>
 		</Filter>
@@ -245,10 +317,6 @@
 				>
 			</File>
 		</Filter>
-		<File
-			RelativePath=".\ReadMe.txt"
-			>
-		</File>
 	</Files>
 	<Globals>
 	</Globals>
