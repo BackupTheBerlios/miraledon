@@ -1,4 +1,4 @@
-// $Id: MiraSplitter.cpp,v 1.3 2006/01/25 13:51:52 gerrit-albrecht Exp $
+// $Id: MiraSplitter.cpp,v 1.4 2006/01/27 12:09:09 gerrit-albrecht Exp $
 //
 // Miraledon
 // Copyright (C) 2006 by Gerrit M. Albrecht
@@ -119,7 +119,7 @@ void CMiraSplitter::OnMouseMove(UINT nFlags, CPoint pt)
   CSplitterWnd::OnMouseMove(nFlags, pt);
 }
 
-// Store the mouse position on left click.
+// Stores the mouse position on left click.
 
 void CMiraSplitter::OnLButtonDown(UINT nFlags, CPoint pt)
 {
@@ -131,11 +131,11 @@ void CMiraSplitter::OnLButtonDown(UINT nFlags, CPoint pt)
 
 void CMiraSplitter::OnInvertTracker(const CRect& rect)
 {
-  if (m_move_and_refresh)            // We don't need to paint an inverted tracker
-    return;                          // if we refresh after every mouse move.
+  if (m_move_and_refresh)                                  // We don't need to paint an inverted tracker
+    return;                                                // if we refresh after every mouse move.
 
   ASSERT_VALID(this);
-  ASSERT(!rect.IsRectEmpty());
+  ASSERT(! rect.IsRectEmpty());
   ASSERT((GetStyle() & WS_CLIPCHILDREN) == 0);
 
   TRACE("RECT %d %d %d %d\n", rect.left, rect.top, rect.Width(), rect.Height());

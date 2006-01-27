@@ -1,4 +1,4 @@
-// $Id: ProcessInformation.h,v 1.7 2006/01/27 12:09:09 gerrit-albrecht Exp $
+// $Id: FileVersionInfo.h,v 1.1 2006/01/27 12:09:09 gerrit-albrecht Exp $
 //
 // Miraledon
 // Copyright (C) 2006 by Gerrit M. Albrecht
@@ -18,34 +18,29 @@
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 // MA 02110-1301, USA.
 
-/// \file ProcessInformation.h
+/// \file FileVersionInfo.h
 /// \author Gerrit M. Albrecht
-/// \brief Contains the declaration of the CProcessInformation class.
+/// \brief Contains the declaration of the CFileVersionInfo class.
 
 #pragma once
 
 #include <windows.h>
-#include <tlhelp32.h>
-#include <vdmdbg.h>
 
-typedef BOOL (CALLBACK *PROCENUMPROC)(DWORD, WORD, LPTSTR, LPARAM);
-
-BOOL CALLBACK MyProcessEnumerator(DWORD dwPID, WORD wTask, LPCTSTR szProcess, LPARAM lParam);
-
-/// \brief Gets information about running processes.
+/// \brief Gets information about the current application.
 ///
-/// This class retrieves information about running processes from the operating system. It's able to
-/// enumerate the processes calling a callback function once for each process. The callback function
-/// has to be defined by the user.
+/// This class retrieves information about the running application from the operating system.
+/// It's able to return version number, manufacturer, copyright holder and much more
+/// information. Upon construction, this class retrieves it's data using windows API calls
+/// and stores everything for later retrieval.
 
-class CProcessInformation
+class CFileVersionInfo
 {
   public:
     /// Standard constructor.
-    CProcessInformation();
+    CFileVersionInfo();
 
     /// Destructor.
-    virtual ~CProcessInformation();
+    virtual ~CFileVersionInfo();
 
     /// Enumerates all processes and calls a callback function for each process.
     ///
@@ -53,6 +48,4 @@ class CProcessInformation
     /// \param lParam is an arbitrary value which is passed to the callback function as a parameter.
     ///        Here you may give a pointer to an object which you may reference from that function.
     /// \return Returns TRUE on success and FALSE on error.
-    BOOL EnumProcs32(PROCENUMPROC lpProc, LPARAM lParam);
 };
-
