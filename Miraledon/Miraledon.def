@@ -1,0 +1,6 @@
+; Miraledon.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Miraledon"
+
+EXPORTS
+    ; Explicit exports can go here
