@@ -1,4 +1,4 @@
-// $Id: HyperlinkCtrl.cpp,v 1.2 2006/01/31 09:52:33 gerrit-albrecht Exp $
+// $Id: SerialPort.cpp,v 1.1 2006/01/31 09:52:33 gerrit-albrecht Exp $
 //
 // Miraledon
 // Copyright (C) 2006 by Gerrit M. Albrecht
@@ -18,25 +18,17 @@
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 // MA 02110-1301, USA.
 
-/// \file HyperlinkCtrl.h
+/// \file SerialPort.cpp
 /// \author Gerrit M. Albrecht
-/// \brief Contains the definition of the CHyperlinkCtrl class.
+/// \brief Contains the definition of the CSerialPort class.
 
 #include "StdAfx.h"
-#include "HyperlinkCtrl.h"
+#include "SerialPort.h"
 
-IMPLEMENT_DYNAMIC(CHyperlinkCtrl, CStatic)
-
-BEGIN_MESSAGE_MAP(CHyperlinkCtrl, CStatic)
-END_MESSAGE_MAP()
-
-CHyperlinkCtrl::CHyperlinkCtrl()
+CSerialPort::CSerialPort()
 {
-#ifndef _WIN32_WCE
-  EnableActiveAccessibility();
-#endif
 }
 
-CHyperlinkCtrl::~CHyperlinkCtrl()
+CSerialPort::~CSerialPort()
 {
 }

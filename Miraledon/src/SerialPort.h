@@ -1,4 +1,4 @@
-// $Id: SerialPort.h,v 1.1 2006/01/31 09:52:33 gerrit-albrecht Exp $
+// $Id: SerialPort.h,v 1.2 2006/01/31 09:54:14 gerrit-albrecht Exp $
 //
 // Miraledon
 // Copyright (C) 2006 by Gerrit M. Albrecht
@@ -24,7 +24,7 @@
 
 #pragma once
 
-/// \brief Opens a serial port and reads or writes data to from/to the port.
+/// \brief Opens a serial port and reads or writes data from/to the port.
 ///
 /// This class manages a serial port. The port can be opened with own communication settings,
 /// the user may read and write from or to the port and close it again. The class protects the

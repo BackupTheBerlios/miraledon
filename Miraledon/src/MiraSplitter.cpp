@@ -1,4 +1,4 @@
-// $Id: MiraSplitter.cpp,v 1.4 2006/01/27 12:09:09 gerrit-albrecht Exp $
+// $Id: MiraSplitter.cpp,v 1.5 2006/01/31 09:52:33 gerrit-albrecht Exp $
 //
 // Miraledon
 // Copyright (C) 2006 by Gerrit M. Albrecht
@@ -17,6 +17,10 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 // MA 02110-1301, USA.
+
+/// \file MiraSplitter.cpp
+/// \author Gerrit M. Albrecht
+/// \brief Contains the definition of the CMiraSplitter class.
 
 #include "StdAfx.h"
 #include "MiraSplitter.h"
