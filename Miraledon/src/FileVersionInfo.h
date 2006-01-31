@@ -1,4 +1,4 @@
-// $Id: FileVersionInfo.h,v 1.3 2006/01/31 10:48:26 gerrit-albrecht Exp $
+// $Id: FileVersionInfo.h,v 1.2 2006/01/31 10:46:57 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -42,9 +42,10 @@ class CFileVersionInfo
     /// Destructor.
     virtual ~CFileVersionInfo();
 
-    /// xxx
+    /// Enumerates all processes and calls a callback function for each process.
     ///
-    /// \param lpProc is a
-    /// \param lParam is a
-    /// \return Returns x on success and y on error.
+    /// \param lpProc is a pointer to the callback function.
+    /// \param lParam is an arbitrary value which is passed to the callback function as a parameter.
+    ///        Here you may give a pointer to an object which you may reference from that function.
+    /// \return Returns TRUE on success and FALSE on error.
 };
