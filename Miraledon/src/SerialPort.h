@@ -1,4 +1,4 @@
-// $Id: SerialPort.h,v 1.3 2006/01/31 10:46:57 gerrit-albrecht Exp $
+// $Id: SerialPort.h,v 1.4 2006/01/31 13:14:27 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -40,12 +40,36 @@ class CSerialPort : public CObject
     virtual ~CSerialPort();
 
   protected:
-    /// Uses a critical section to protect the buffer of the port. Needed to avoid race conditions between the threads.
-    inline void LockBuffer() { ::EnterCriticalSection(&m_lock); }
+    /// Uses a critical section to protect the buffer of the port.
+    void LockBuffer();
 
 	/// Unlocks our buffer protection.
-	inline void UnLockBuffer() { ::LeaveCriticalSection(&m_lock); } 
+	void UnLockBuffer();
+
+    /// Selects an port, which we want to open. Sets the m_name member variable.
+    void SelectPort (int number = 0);
+
+    /// Selects and opens a port, sets standard values.
+    ///
+    /// \param number is the number of the port we want to open.
+    ///        A value of 0 means COM1.
+    bool OpenPort (int number = 0);
+
+    /// Closes the open port.
+    void ClosePort ();
+
+    /// Returns a handle to the selected port name.
+    ///
+    /// \return Returns a reference to the string containing the port name.
+    CString &GetPortName ();
 
   protected:
     CRITICAL_SECTION  m_lock;                    ///< Protects our buffer during data transfers.
+    HANDLE            m_handle;                  ///< File handle for the serial port.
+    DCB               m_dcb;                     ///< Data Communication Block (contains speed, parity, ..).
+    CString           m_name;                    ///< Name of the COM port, e.g. "COM1".
+    COMMTIMEOUTS      m_timeouts;                ///< Timeout values for reading and writing.
+    bool              m_is_open;
+    BOOL              m_is_ready;
+    char              m_buffer[128];
 };
