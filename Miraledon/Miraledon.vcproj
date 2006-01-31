@@ -197,6 +197,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\src\MemDC.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Miraledon.cpp"
 				>
 			</File>
@@ -225,6 +229,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\src\SerialPort.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\StdAfx.cpp"
 				>
 				<FileConfiguration
@@ -243,6 +251,10 @@
 						UsePrecompiledHeader="1"
 					/>
 				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\src\Thread.cpp"
+				>
 			</File>
 			<File
 				RelativePath=".\src\TreeListCtrl.cpp"
@@ -264,6 +276,10 @@
 			</File>
 			<File
 				RelativePath=".\src\HyperlinkCtrl.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\MemDC.h"
 				>
 			</File>
 			<File
@@ -291,7 +307,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\src\SerialPort.h"
+				>
+			</File>
+			<File
 				RelativePath=".\StdAfx.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Thread.h"
 				>
 			</File>
 			<File
