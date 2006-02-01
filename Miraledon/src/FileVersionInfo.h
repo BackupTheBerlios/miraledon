@@ -1,4 +1,4 @@
-// $Id: FileVersionInfo.h,v 1.2 2006/01/31 10:46:57 gerrit-albrecht Exp $
+// $Id: FileVersionInfo.h,v 1.4 2006/02/01 15:07:36 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -26,7 +26,7 @@
 
 #include <windows.h>
 
-/// \brief Gets information about the current application.
+/// Gets information about the current application.
 ///
 /// This class retrieves information about the running application from the operating system.
 /// It's able to return version number, manufacturer, copyright holder and much more
@@ -42,10 +42,35 @@ class CFileVersionInfo
     /// Destructor.
     virtual ~CFileVersionInfo();
 
-    /// Enumerates all processes and calls a callback function for each process.
+  public:
+    /// Grabs the version information from the given file and holds its data using
+    /// separate class members.
     ///
-    /// \param lpProc is a pointer to the callback function.
-    /// \param lParam is an arbitrary value which is passed to the callback function as a parameter.
-    ///        Here you may give a pointer to an object which you may reference from that function.
+    /// \param filename is the name of the file or module (dll) from which the
+    ///        version information should be retrieved.
     /// \return Returns TRUE on success and FALSE on error.
+    BOOL Get (const CString &filename);
+
+    /// Frees all used buffers.
+    void Free ();
+
+    /// Retrieves a the value of a field from the version info data member.
+    ///
+    /// \param fieldname is the name of the field whose information should
+    ///        be extracted and returned.
+    /// \return Returns the string value of the named field.
+    CString QueryValue(const CString &fieldname, DWORD langcharset = 0);
+
+    CString GetFileDescription()  { return QueryValue(_T("FileDescription"));  }
+    CString GetFileVersion()      { return QueryValue(_T("FileVersion"));      }
+    CString GetInternalName()     { return QueryValue(_T("InternalName"));     }
+    CString GetCompanyName()      { return QueryValue(_T("CompanyName"));      }
+    CString GetLegalCopyright()   { return QueryValue(_T("LegalCopyright"));   }
+    CString GetOriginalFilename() { return QueryValue(_T("OriginalFilename")); }
+    CString GetProductName()      { return QueryValue(_T("ProductName"));      }
+    CString GetProductVersion()   { return QueryValue(_T("ProductVersion"));   }
+
+  protected:
+    LPBYTE m_version_info_data;              ///< Holds the retrieved version information block.
+    DWORD  m_lang_charset;
 };
