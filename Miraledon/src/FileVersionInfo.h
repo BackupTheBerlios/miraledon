@@ -1,4 +1,4 @@
-// $Id: FileVersionInfo.h,v 1.5 2006/02/01 15:09:18 gerrit-albrecht Exp $
+// $Id: FileVersionInfo.h,v 1.6 2006/02/01 15:12:57 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -26,7 +26,7 @@
 
 #include <windows.h>
 
-/// Gets information about the current application.
+/// \brief Gets information about the current application.
 ///
 /// This class retrieves information about the running application from the operating system.
 /// It's able to return version number, manufacturer, copyright holder and much more

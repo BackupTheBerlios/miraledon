@@ -1,4 +1,4 @@
-// $Id: FileVersionInfo.cpp,v 1.3 2006/02/01 15:07:36 gerrit-albrecht Exp $
+// $Id: FileVersionInfo.cpp,v 1.4 2006/02/01 15:09:17 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -43,14 +43,6 @@ CFileVersionInfo::~CFileVersionInfo()
   Free();
 }
 
-void CFileVersionInfo::Free()
-{
-  if (m_version_info_data) {
-    delete [] m_version_info_data;
-    m_version_info_data = 0;
-  }
-}
-
 BOOL CFileVersionInfo::Get(const CString &filename)
 {
   DWORD handle;
@@ -70,6 +62,14 @@ BOOL CFileVersionInfo::Get(const CString &filename)
   }
 
   return TRUE;
+}
+
+void CFileVersionInfo::Free()
+{
+  if (m_version_info_data) {
+    delete [] m_version_info_data;
+    m_version_info_data = 0;
+  }
 }
 
 CString CFileVersionInfo::QueryValue(const CString &fieldname, DWORD langcharset)
