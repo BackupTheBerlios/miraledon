@@ -1,4 +1,4 @@
-// $Id: FileVersionInfo.h,v 1.4 2006/02/01 15:07:36 gerrit-albrecht Exp $
+// $Id: FileVersionInfo.h,v 1.5 2006/02/01 15:09:18 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -49,10 +49,10 @@ class CFileVersionInfo
     /// \param filename is the name of the file or module (dll) from which the
     ///        version information should be retrieved.
     /// \return Returns TRUE on success and FALSE on error.
-    BOOL Get (const CString &filename);
+    BOOL Get(const CString &filename);
 
     /// Frees all used buffers.
-    void Free ();
+    void Free();
 
     /// Retrieves a the value of a field from the version info data member.
     ///

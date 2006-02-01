@@ -1,4 +1,4 @@
-// $Id: FileVersionInfo.cpp,v 1.2 2006/01/31 10:46:57 gerrit-albrecht Exp $
+// $Id: FileVersionInfo.cpp,v 1.3 2006/02/01 15:07:36 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -30,10 +30,69 @@
 
 #pragma warning(disable: 4101 4189)
 
+#pragma comment(lib, "version")
+
 CFileVersionInfo::CFileVersionInfo()
 {
+  m_version_info_data = 0;
+  m_lang_charset      = 0;
 }
 
 CFileVersionInfo::~CFileVersionInfo()
 {
+  Free();
+}
+
+void CFileVersionInfo::Free()
+{
+  if (m_version_info_data) {
+    delete [] m_version_info_data;
+    m_version_info_data = 0;
+  }
+}
+
+BOOL CFileVersionInfo::Get(const CString &filename)
+{
+  DWORD handle;
+  DWORD length;
+
+  ASSERT(filename.GetLength() > 0);
+  ASSERT(m_version_info_data == 0);
+
+  length = GetFileVersionInfoSize(filename, &handle);
+  if (length == 0)
+    return FALSE;
+
+  m_version_info_data = new BYTE[length];
+  if (! GetFileVersionInfo(filename, handle, length, m_version_info_data)) {
+    Free();
+    return FALSE;
+  }
+
+  return TRUE;
+}
+
+CString CFileVersionInfo::QueryValue(const CString &fieldname, DWORD langcharset)
+{
+  CString result = _T("");
+
+  ASSERT(m_version_info_data);
+
+  if (m_version_info_data == 0)
+    return result;
+
+  if (langcharset == 0)                          // No lang-charset specified, use default.
+    langcharset = m_lang_charset;
+
+  UINT nQuerySize;
+  LPVOID lpData;
+  CString strBlockName;
+
+  strBlockName.Format(_T("\\StringFileInfo\\%08lx\\%s"), langcharset, fieldname);
+  if (VerQueryValue((void **)m_version_info_data, strBlockName.GetBuffer(0), &lpData, &nQuerySize))
+    result = (LPCTSTR)lpData;
+
+  strBlockName.ReleaseBuffer();
+
+  return result;
 }
