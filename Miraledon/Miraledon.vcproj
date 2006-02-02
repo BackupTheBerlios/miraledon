@@ -201,6 +201,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\src\MiraDialog.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Miraledon.cpp"
 				>
 			</File>
@@ -230,6 +234,10 @@
 			</File>
 			<File
 				RelativePath=".\src\SerialPort.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\SizeGrip.cpp"
 				>
 			</File>
 			<File
@@ -283,6 +291,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\src\MiraDialog.h"
+				>
+			</File>
+			<File
 				RelativePath=".\src\MiraListCtrl.h"
 				>
 			</File>
@@ -308,6 +320,10 @@
 			</File>
 			<File
 				RelativePath=".\src\SerialPort.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\SizeGrip.h"
 				>
 			</File>
 			<File
@@ -343,5 +359,9 @@
 		</Filter>
 	</Files>
 	<Globals>
+		<Global
+			Name="RESOURCE_FILE"
+			Value="Miraledon.rc"
+		/>
 	</Globals>
 </VisualStudioProject>
