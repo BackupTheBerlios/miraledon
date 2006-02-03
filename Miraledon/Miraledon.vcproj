@@ -265,6 +265,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\src\TrayIcon.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\src\TreeListCtrl.cpp"
 				>
 			</File>
@@ -332,6 +336,10 @@
 			</File>
 			<File
 				RelativePath=".\src\Thread.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\TrayIcon.h"
 				>
 			</File>
 			<File
