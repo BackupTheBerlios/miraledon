@@ -1,4 +1,4 @@
-// $Id: MiraDialog.cpp,v 1.1 2006/02/02 14:40:59 gerrit-albrecht Exp $
+// $Id: MiraDialog.cpp,v 1.2 2006/02/03 15:00:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -84,6 +84,8 @@ void CMiraDialog::CreateSizeGrip(bool visible /* = true */)
     EnableSizeGrip(false);
     TRACE("CMiraDialog::CreateSizeGrip: No resizable dialog border.\n");
   }
+
+  m_size_grip_created = true;
 }
 
 void CMiraDialog::CreateToolTip()
@@ -149,8 +151,8 @@ LRESULT CMiraDialog::OnNcHitTest(CPoint point)
 
       GetWindowRect(rc);
 
-      rc.left = rc.right-GetSystemMetrics(SM_CXHSCROLL);
-      rc.top  = rc.bottom-GetSystemMetrics(SM_CYVSCROLL);
+      rc.left = rc.right  - GetSystemMetrics(SM_CXHSCROLL);
+      rc.top  = rc.bottom - GetSystemMetrics(SM_CYVSCROLL);
 
       if (rc.PtInRect(point)) {
         ht = HTBOTTOMRIGHT;
@@ -163,6 +165,8 @@ LRESULT CMiraDialog::OnNcHitTest(CPoint point)
 
 void CMiraDialog::OnSize(UINT nType, int cx, int cy)
 {
+  TRACE("CMiraDialog::OnSize\n");
+
   CDialog::OnSize(nType, cx, cy);
 
   if (m_size_grip_created) {
@@ -174,7 +178,12 @@ void CMiraDialog::OnSize(UINT nType, int cx, int cy)
     r.top  = r.bottom - GetSystemMetrics(SM_CYVSCROLL);
 
     // Put it at the correct spot in the z-order, make sure other controls don't obscure it.
-    m_size_grip.SetWindowPos(NULL, r.left, r.top, r.Width(), r.Height(), 0);
+    if (m_size_grip.IsWindowVisible())
+      m_size_grip.SetWindowPos(&CWnd::wndBottom, r.left, r.top, r.Width(), r.Height(), SWP_SHOWWINDOW);
+    else
+      m_size_grip.SetWindowPos(&CWnd::wndBottom, r.left, r.top, r.Width(), r.Height(), SWP_HIDEWINDOW);
+    //m_size_grip.SetWindowPos(NULL, r.left, r.top, r.Width(), r.Height(), 0);
+    //m_size_grip.MoveWindow(r.left, r.top, r.Width(), r.Height());
   }
 }
 

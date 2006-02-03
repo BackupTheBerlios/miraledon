@@ -1,4 +1,4 @@
-// $Id: TrayIcon.h,v 1.1 2006/02/03 12:18:35 gerrit-albrecht Exp $
+// $Id: TrayIcon.h,v 1.2 2006/02/03 15:00:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -36,6 +36,12 @@ class CTrayIcon : public CCmdTarget
   public:
     CTrayIcon();
     virtual ~CTrayIcon();
+
+    bool AddIcon (unsigned int icon_id, const CString &tip, const CWnd &target);
+    bool RemoveIcon ();
+
+  protected:
+    NOTIFYICONDATA m_nid;
 
   protected:
     DECLARE_MESSAGE_MAP()
