@@ -217,6 +217,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\src\MiraProgressDialog.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\src\MiraSplitter.cpp"
 				>
 			</File>
@@ -300,6 +304,10 @@
 			</File>
 			<File
 				RelativePath=".\src\MiraListCtrl.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\MiraProgressDialog.h"
 				>
 			</File>
 			<File
