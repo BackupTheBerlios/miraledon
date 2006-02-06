@@ -1,4 +1,4 @@
-// $Id: MiraSplitter.cpp,v 1.6 2006/01/31 10:46:57 gerrit-albrecht Exp $
+// $Id: MiraSplitter.cpp,v 1.7 2006/02/06 12:39:16 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -75,6 +75,9 @@ void CMiraSplitter::OnMouseMove(UINT nFlags, CPoint pt)
   }
 
   if (nFlags == MK_LBUTTON) {
+    m_pos_x = pt.x;                              // Don't confide in OnLButtonDown() because to save the
+    m_pos_y = pt.y;                              // position since we change 'pt' and than the tracker flickers.
+
     pt.Offset(m_ptTrackOffset);                  // pt is the upper right of hit detect.
 
     if (pt.y < m_rectLimit.top)                  // Limit the point to the valid split range.
@@ -88,34 +91,34 @@ void CMiraSplitter::OnMouseMove(UINT nFlags, CPoint pt)
       pt.x = m_rectLimit.right;
 
     if (m_htTrack == vSplitterBox || m_htTrack >= vSplitterBar1 && m_htTrack <= vSplitterBar15) {
-			if (m_rectTracker.top != pt.y) {
-				OnInvertTracker(m_rectTracker);
-				m_rectTracker.OffsetRect(0, pt.y - m_rectTracker.top);
-				OnInvertTracker(m_rectTracker);
-			}
+      if (m_rectTracker.top != pt.y) {
+        OnInvertTracker(m_rectTracker);
+        m_rectTracker.OffsetRect(0, pt.y - m_rectTracker.top);
+        OnInvertTracker(m_rectTracker);
+      }
     }
     else if (m_htTrack == hSplitterBox || m_htTrack >= hSplitterBar1 && m_htTrack <= hSplitterBar15) {
-			if (m_rectTracker.left != pt.x) {
-				OnInvertTracker(m_rectTracker);
-				m_rectTracker.OffsetRect(pt.x - m_rectTracker.left, 0);
-				OnInvertTracker(m_rectTracker);
-			}
+      if (m_rectTracker.left != pt.x) {
+        OnInvertTracker(m_rectTracker);
+        m_rectTracker.OffsetRect(pt.x - m_rectTracker.left, 0);
+        OnInvertTracker(m_rectTracker);
+      }
     }
     else if (m_htTrack == bothSplitterBox || (m_htTrack >= splitterIntersection1 && m_htTrack <= splitterIntersection225)) {
-			if (m_rectTracker.top != pt.y) {
-				OnInvertTracker(m_rectTracker);
-				m_rectTracker.OffsetRect(0, pt.y - m_rectTracker.top);
-				OnInvertTracker(m_rectTracker);
-			}
-			if (m_rectTracker2.left != pt.x) {
-				OnInvertTracker(m_rectTracker2);
-				m_rectTracker2.OffsetRect(pt.x - m_rectTracker2.left, 0);
-				OnInvertTracker(m_rectTracker2);
-			}
+      if (m_rectTracker.top != pt.y) {
+        OnInvertTracker(m_rectTracker);
+        m_rectTracker.OffsetRect(0, pt.y - m_rectTracker.top);
+        OnInvertTracker(m_rectTracker);
+      }
+      if (m_rectTracker2.left != pt.x) {
+        OnInvertTracker(m_rectTracker2);
+        m_rectTracker2.OffsetRect(pt.x - m_rectTracker2.left, 0);
+        OnInvertTracker(m_rectTracker2);
+      }
     }
 
     StopTracking(TRUE);
-    OnLButtonDown(0, pt);
+    CSplitterWnd::OnLButtonDown(0, pt);                    // Updates current mouse coordinates.
 
     return;
   }

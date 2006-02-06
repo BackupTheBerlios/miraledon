@@ -1,4 +1,4 @@
-// $Id: ProcessInformation.cpp,v 1.3 2006/01/31 10:46:57 gerrit-albrecht Exp $
+// $Id: ProcessInformation.cpp,v 1.4 2006/02/06 12:39:17 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -69,7 +69,6 @@ BOOL CProcessInformation::EnumProcs32(PROCENUMPROC lpProc, LPARAM lParam)
 
   // VDMDBG Function Pointers.
   INT (WINAPI *lpfVDMEnumTaskWOWEx)(DWORD, TASKENUMPROCEX, LPARAM);
-
 
   if ((os.PlatformID() == VER_PLATFORM_WIN32_WINDOWS) ||
       (os.PlatformID() == VER_PLATFORM_WIN32_NT && os.MajorVersion() > 4)) {

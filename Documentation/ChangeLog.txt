@@ -1,0 +1,11 @@
+$Id: ChangeLog.txt,v 1.1 2006/02/06 12:39:47 gerrit-albrecht Exp $
+
+2005-02-06  Gerrit M. Albrecht  <gerrit-albrecht@users.berlios.de>
+
+	* Bugfix: Removed some unnecessary flickering of the splitter panes
+      and it's tracker bar.
+
+2005-01-23  Gerrit M. Albrecht  <gerrit-albrecht@users.berlios.de>
+
+	* Registered Miraledon as a project at BerliOS.
+	* Added a simple website for Miraledon.
