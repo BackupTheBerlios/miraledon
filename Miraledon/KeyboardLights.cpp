@@ -1,19 +1,39 @@
-// File        : KeyboardLights.cpp
-// Project     : Miraledon
-// Description : Implementation of the class.
+// $Id: KeyboardLights.cpp,v 1.2 2006/02/07 18:38:35 gerrit-albrecht Exp $
+//
+// Miraledon Class Library
+// Copyright (C) 2005, 2006 by Gerrit M. Albrecht
+//
+// This library is free software; you can redistribute it and/or
+// modify it under the terms of the GNU Lesser General Public
+// License as published by the Free Software Foundation; either
+// version 2.1 of the License, or (at your option) any later version.
+//
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied
+// warranty of MERCHANTABILITY or FITNESS FOR A
+// PARTICULAR PURPOSE. See the GNU Lesser General Public
+// License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public
+// License along with this library; if not, write to the Free Software
+// Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+
+/// \file KeyboardLights.cpp
+/// \author Gerrit M. Albrecht
+/// \brief Contains the definition of the MKeyboardLights class.
 
 #include "StdAfx.h"
 #include "KeyboardLights.h"
 
-CKeyboardLights::CKeyboardLights()
+MKeyboardLights::MKeyboardLights()
 {
 }
 
-CKeyboardLights::~CKeyboardLights()
+MKeyboardLights::~MKeyboardLights()
 {
 }
 
-void CKeyboardLights::ToggleKey(unsigned char key)
+void MKeyboardLights::ToggleKey(unsigned char key)
 {
   if (m_os.IsPlatformWindows()) {
     BYTE keyboard_state[256];
@@ -28,7 +48,7 @@ void CKeyboardLights::ToggleKey(unsigned char key)
   }
 }
 
-void CKeyboardLights::SetCapsLock(BOOL enable)
+void MKeyboardLights::SetCapsLock(BOOL enable)
 {
   if (enable) {
     if (! GetCapsLock())
@@ -40,17 +60,17 @@ void CKeyboardLights::SetCapsLock(BOOL enable)
   }
 }
 
-BOOL CKeyboardLights::GetCapsLock()
+BOOL MKeyboardLights::GetCapsLock()
 {
   return (::GetKeyState(VK_CAPITAL) & 0x0001);
 }
 
-void CKeyboardLights::ToggleCapsLock()
+void MKeyboardLights::ToggleCapsLock()
 {
   ToggleKey(VK_CAPITAL);
 }
 
-void CKeyboardLights::SetScrollLock(BOOL enable)
+void MKeyboardLights::SetScrollLock(BOOL enable)
 {
   if (enable) {
     if (! GetScrollLock())
@@ -62,17 +82,17 @@ void CKeyboardLights::SetScrollLock(BOOL enable)
   }
 }
 
-BOOL CKeyboardLights::GetScrollLock()
+BOOL MKeyboardLights::GetScrollLock()
 {
   return (::GetKeyState(VK_SCROLL) & 0x0001);
 }
 
-void CKeyboardLights::ToggleScrollLock()
+void MKeyboardLights::ToggleScrollLock()
 {
   ToggleKey(VK_SCROLL);
 }
 
-void CKeyboardLights::SetNumLock(BOOL enable)
+void MKeyboardLights::SetNumLock(BOOL enable)
 {
   if (enable) {
     if (! GetNumLock())
@@ -84,12 +104,12 @@ void CKeyboardLights::SetNumLock(BOOL enable)
   }
 }
 
-BOOL CKeyboardLights::GetNumLock()
+BOOL MKeyboardLights::GetNumLock()
 {
   return (::GetKeyState(VK_NUMLOCK) & 0x0001);
 }
 
-void CKeyboardLights::ToggleNumLock()
+void MKeyboardLights::ToggleNumLock()
 {
   ToggleKey(VK_NUMLOCK);
 }
