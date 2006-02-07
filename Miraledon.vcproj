@@ -43,6 +43,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
+				AdditionalIncludeDirectories="&quot;C:\Dokumente und Einstellungen\Albrecht\Eigene Dateien\Visual Studio 2005\Projects\Miraledon&quot;"
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_AFXEXT"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -125,6 +126,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="&quot;C:\Dokumente und Einstellungen\Albrecht\Eigene Dateien\Visual Studio 2005\Projects\Miraledon&quot;"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_AFXEXT"
 				RuntimeLibrary="2"
 				UsePrecompiledHeader="2"
@@ -189,6 +191,10 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\Miraledon\Dialog.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Miraledon\FileVersionInfo.cpp"
 				>
 			</File>
@@ -197,11 +203,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Miraledon\MemDC.cpp"
+				RelativePath=".\Miraledon\ListCtrl.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Miraledon\Dialog.cpp"
+				RelativePath=".\Miraledon\MemDC.cpp"
 				>
 			</File>
 			<File
@@ -213,22 +219,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Miraledon\ListCtrl.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Miraledon\ProgressDialog.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Miraledon\Splitter.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Miraledon\TreeCtrl.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\Miraledon\OperatingSystem.cpp"
 				>
 			</File>
@@ -237,11 +227,19 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Miraledon\ProgressDialog.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Miraledon\SerialPort.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\Miraledon\SizeGrip.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Miraledon\Splitter.cpp"
 				>
 			</File>
 			<File
@@ -273,6 +271,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Miraledon\TreeCtrl.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Miraledon\TreeListCtrl.cpp"
 				>
 			</File>
@@ -287,6 +289,10 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
+				RelativePath=".\Miraledon\Dialog.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Miraledon\FileVersionInfo.h"
 				>
 			</File>
@@ -295,27 +301,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Miraledon\MemDC.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Miraledon\Dialog.h"
-				>
-			</File>
-			<File
 				RelativePath=".\Miraledon\ListCtrl.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Miraledon\ProgressDialog.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Miraledon\Splitter.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Miraledon\TreeCtrl.h"
+				RelativePath=".\Miraledon\MemDC.h"
 				>
 			</File>
 			<File
@@ -324,6 +314,10 @@
 			</File>
 			<File
 				RelativePath=".\Miraledon\ProcessInformation.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Miraledon\ProgressDialog.h"
 				>
 			</File>
 			<File
@@ -339,6 +333,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Miraledon\Splitter.h"
+				>
+			</File>
+			<File
 				RelativePath=".\StdAfx.h"
 				>
 			</File>
@@ -348,6 +346,10 @@
 			</File>
 			<File
 				RelativePath=".\Miraledon\TrayIcon.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Miraledon\TreeCtrl.h"
 				>
 			</File>
 			<File

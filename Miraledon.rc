@@ -79,13 +79,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "TODO: <Company name>"
-            VALUE "FileDescription", "TODO: <File description>"
+            VALUE "CompanyName", "Gerrit Albrecht Softwareentwicklung und Internetdienstleistungen (G.A.S.I.)"
+            VALUE "FileDescription", "Miraledon is a MFC extension DLL providing an enhanced class library for MFC."
             VALUE "FileVersion", "1.0.0.1"
             VALUE "InternalName", "Miraledon.dll"
-            VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
+            VALUE "LegalCopyright", "(c) 2006 Gerrit Albrecht Softwareentwicklung und Internetdienstleistungen. All rights reserved."
             VALUE "OriginalFilename", "Miraledon.dll"
-            VALUE "ProductName", "TODO: <Product name>"
+            VALUE "ProductName", "Miraledon"
             VALUE "ProductVersion", "1.0.0.1"
         END
     END
