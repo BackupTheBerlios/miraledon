@@ -1,4 +1,4 @@
-// $Id: TreeListView.h,v 1.2 2006/02/07 15:54:19 gerrit-albrecht Exp $
+// $Id: TreeListView.h,v 1.3 2006/02/07 16:07:49 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -22,7 +22,7 @@
 
 class MTreeListView : public CCtrlView
 {
-  DECLARE_DYNCREATE(CTreeListView)
+  DECLARE_DYNCREATE(MTreeListView)
 
   protected:
     MTreeListView();           // protected constructor used by dynamic creation

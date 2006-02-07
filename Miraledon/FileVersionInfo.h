@@ -1,4 +1,4 @@
-// $Id: FileVersionInfo.h,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
+// $Id: FileVersionInfo.h,v 1.3 2006/02/07 16:07:49 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -72,5 +72,5 @@ class MFileVersionInfo
 
   protected:
     LPBYTE m_version_info_data;              ///< Holds the retrieved version information block.
-    DWORD  m_lang_charset;
+    DWORD  m_lang_charset;                   ///< Language of resource we want to load.
 };

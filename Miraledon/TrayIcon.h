@@ -1,4 +1,4 @@
-// $Id: TrayIcon.h,v 1.2 2006/02/07 15:54:19 gerrit-albrecht Exp $
+// $Id: TrayIcon.h,v 1.3 2006/02/07 16:07:49 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -31,7 +31,7 @@
 
 class MTrayIcon : public CCmdTarget
 {
-  DECLARE_DYNAMIC(CTrayIcon)
+  DECLARE_DYNAMIC(MTrayIcon)
 
   public:
     MTrayIcon();

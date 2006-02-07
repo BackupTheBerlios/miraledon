@@ -1,4 +1,4 @@
-// $Id: Thread.cpp,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
+// $Id: Thread.cpp,v 1.3 2006/02/07 16:07:49 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -38,7 +38,7 @@ static char THIS_FILE[] = __FILE__;
 
 DWORD WINAPI _ThreadFunc(LPVOID pvThread)
 {
-  CThread *pThread = (CThread *)pvThread;  // Typecast.
+  MThread *pThread = (MThread *)pvThread;                  // Typecast.
 
   pThread->Run();
 
@@ -59,12 +59,8 @@ MThread::~MThread()
 
 bool MThread::Create()
 {
-  m_handle = CreateThread(NULL,
-                          0,
-                          (LPTHREAD_START_ROUTINE) _ThreadFunc,
-                          (LPVOID) this,
-                          0,
-                          (LPDWORD) &m_id);
+  m_handle = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE) _ThreadFunc,
+                          (LPVOID) this, 0, (LPDWORD) &m_id);
   if (m_handle == NULL)
     return false;
 

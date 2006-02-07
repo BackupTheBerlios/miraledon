@@ -1,4 +1,4 @@
-// $Id: ListCtrl.h,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
+// $Id: ListCtrl.h,v 1.3 2006/02/07 16:07:49 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -18,7 +18,16 @@
 // License along with this library; if not, write to the Free Software
 // Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
+/// \file ListCtrl.h
+/// \author Gerrit M. Albrecht
+/// \brief Contains the declaration of the MListCtrl class.
+
 #pragma once
+
+/// \brief This is an enhanced CListCtrl.
+///
+/// This class is able to autosize it's columns.
+/// More features will follow.
 
 class MListCtrl : public CListCtrl
 {
