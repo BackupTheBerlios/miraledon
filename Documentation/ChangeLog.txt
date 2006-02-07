@@ -1,4 +1,11 @@
-$Id: ChangeLog.txt,v 1.1 2006/02/06 12:39:47 gerrit-albrecht Exp $
+$Id: ChangeLog.txt,v 1.2 2006/02/07 13:42:24 gerrit-albrecht Exp $
+
+2005-02-07  Gerrit M. Albrecht  <gerrit-albrecht@users.berlios.de>
+
+	* New directory structure. Removed the src directory and placed
+	  the source file directly into Miraledon. So I'm able to use
+	  includes like <Miraledon/Splitter.h> instead of <MiraSplitter.h>.
+	* Added a Miraledon namespace.
 
 2005-02-06  Gerrit M. Albrecht  <gerrit-albrecht@users.berlios.de>
 
