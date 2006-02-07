@@ -1,4 +1,4 @@
-// $Id: HyperlinkCtrl.h,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: HyperlinkCtrl.h,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -20,7 +20,7 @@
 
 /// \file HyperlinkCtrl.h
 /// \author Gerrit M. Albrecht
-/// \brief Contains the declaration of the CHyperlinkCtrl class.
+/// \brief Contains the declaration of the MHyperlinkCtrl class.
 
 #pragma once
 
@@ -29,16 +29,16 @@
 /// This class displays a hyperlink and waits for a mouse click. It then opens the
 /// standard web browser and shows the deposited website.
 
-class CHyperlinkCtrl : public CStatic
+class MHyperlinkCtrl : public CStatic
 {
-  DECLARE_DYNAMIC(CHyperlinkCtrl)
+  DECLARE_DYNAMIC(MHyperlinkCtrl)
 
   public:
     /// Standard constructor.
-    CHyperlinkCtrl();
+    MHyperlinkCtrl();
 
    /// Destructor.
-   virtual ~CHyperlinkCtrl();
+   virtual ~MHyperlinkCtrl();
 
   protected:
     DECLARE_MESSAGE_MAP()

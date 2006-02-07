@@ -1,4 +1,4 @@
-// $Id: ListCtrl.h,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: ListCtrl.h,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -20,13 +20,13 @@
 
 #pragma once
 
-class CMiraListCtrl : public CListCtrl
+class MListCtrl : public CListCtrl
 {
-  DECLARE_DYNAMIC(CMiraListCtrl)
+  DECLARE_DYNAMIC(MListCtrl)
 
   public:
-    CMiraListCtrl();
-    virtual ~CMiraListCtrl();
+    MListCtrl();
+    virtual ~MListCtrl();
 
     void AutoSizeColumn(int col);
     void AutoSizeColumns();
@@ -40,5 +40,4 @@ class CMiraListCtrl : public CListCtrl
 
   protected:
     DECLARE_MESSAGE_MAP()
-
 };

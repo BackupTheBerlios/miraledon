@@ -1,4 +1,4 @@
-// $Id: OperatingSystem.cpp,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: OperatingSystem.cpp,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -20,12 +20,12 @@
 
 /// \file OperatingSystem.cpp
 /// \author Gerrit M. Albrecht
-/// \brief Contains the definition of the COperatingSystem class.
+/// \brief Contains the definition of the MOperatingSystem class.
 
 #include "StdAfx.h"
 #include "OperatingSystem.h"
 
-COperatingSystem::COperatingSystem()
+MOperatingSystem::MOperatingSystem()
 {
   m_is_valid = FALSE;
 
@@ -35,16 +35,16 @@ COperatingSystem::COperatingSystem()
     m_is_valid = TRUE;
 }
 
-COperatingSystem::~COperatingSystem()
+MOperatingSystem::~MOperatingSystem()
 {
 }
 
-BOOL COperatingSystem::IsValid() const
+BOOL MOperatingSystem::IsValid() const
 {
   return m_is_valid;
 }
 
-BOOL COperatingSystem::IsWindowsNT40() const
+BOOL MOperatingSystem::IsWindowsNT40() const
 {
   if (! m_is_valid)
     return FALSE;
@@ -56,12 +56,12 @@ BOOL COperatingSystem::IsWindowsNT40() const
   return FALSE;
 }
 
-DWORD COperatingSystem::PlatformID() const
+DWORD MOperatingSystem::PlatformID() const
 {
   return m_os_version_info.dwPlatformId;
 }
 
-DWORD COperatingSystem::MajorVersion() const
+DWORD MOperatingSystem::MajorVersion() const
 {
   return m_os_version_info.dwMajorVersion;
 }

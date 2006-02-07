@@ -1,4 +1,4 @@
-// $Id: OperatingSystem.h,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: OperatingSystem.h,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -20,7 +20,7 @@
 
 /// \file OperatingSystem.h
 /// \author Gerrit M. Albrecht
-/// \brief Contains the declaration of the COperatingSystem class.
+/// \brief Contains the declaration of the MOperatingSystem class.
 
 #pragma once
 
@@ -32,14 +32,14 @@
 /// other methods allow comparisations to check if it is a certain
 /// well known operating system or platform or not.
 
-class COperatingSystem : public CObject
+class MOperatingSystem : public CObject
 {
   public:
     /// Standard constructor.
-    COperatingSystem();
+    MOperatingSystem();
 
     /// Destructor.
-    virtual ~COperatingSystem();
+    virtual ~MOperatingSystem();
 
     /// Determines if the returned values of the methods are correct.
     ///

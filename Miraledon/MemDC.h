@@ -1,4 +1,4 @@
-// $Id: MemDC.h,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: MemDC.h,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -20,7 +20,7 @@
 
 /// \file MemDC.h
 /// \author Keith Rule
-/// \brief Contains the declaration of the CMemDC class.
+/// \brief Contains the declaration of the MMemDC class.
 
 #pragma once
 
@@ -51,15 +51,15 @@
 /// \brief This class implements a memory Device Context which allows
 /// flicker free drawing.
 
-class CMemDC : public CDC {
+class MMemDC : public CDC {
   public:
-    CMemDC(CDC *pDC, const CRect *pRect = 0);
-    virtual ~CMemDC();
+    MMemDC(CDC *pDC, const CRect *pRect = 0);
+    virtual ~MMemDC();
 
-    inline CMemDC* operator->()        // Allow usage as a pointer.
+    inline MMemDC* operator->()        // Allow usage as a pointer.
       { return this; }
 
-    inline operator CMemDC*()          // Allow usage as a pointer.
+    inline operator MMemDC*()          // Allow usage as a pointer.
       { return this; }
 
   protected:

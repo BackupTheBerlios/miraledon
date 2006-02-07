@@ -1,4 +1,4 @@
-// $Id: MemDC.cpp,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: MemDC.cpp,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -21,7 +21,7 @@
 #include "StdAfx.h"
 #include "MemDC.h"
 
-CMemDC::CMemDC(CDC* pDC, const CRect* pRect)
+MMemDC::MMemDC(CDC* pDC, const CRect* pRect)
  : CDC()
 {
   ASSERT(pDC != NULL);
@@ -60,7 +60,7 @@ CMemDC::CMemDC(CDC* pDC, const CRect* pRect)
   FillSolidRect(m_rect, pDC->GetBkColor());   // Fill background.
 }
 	
-CMemDC::~CMemDC()
+MMemDC::~MMemDC()
 {
   if (m_bMemDC) {
 			// Copy the offscreen bitmap onto the screen.

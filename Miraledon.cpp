@@ -1,4 +1,4 @@
-// $Id: Miraledon.cpp,v 1.1 2006/01/27 12:15:43 gerrit-albrecht Exp $
+// $Id: Miraledon.cpp,v 1.1 2006/02/07 15:37:02 gerrit-albrecht Exp $
 //
 // Miraledon
 // Copyright (C) 2006 by Gerrit M. Albrecht

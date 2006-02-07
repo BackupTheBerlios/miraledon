@@ -1,4 +1,4 @@
-// $Id: Dialog.cpp,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: Dialog.cpp,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -18,22 +18,22 @@
 // License along with this library; if not, write to the Free Software
 // Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
-/// \file MiraDialog.h
+/// \file Dialog.h
 /// \author Gerrit M. Albrecht
-/// \brief Contains the definition of the CMiraDialog class.
+/// \brief Contains the definition of the MDialog class.
 
 #include "StdAfx.h"
-#include "MiraDialog.h"
+#include "Dialog.h"
 
-IMPLEMENT_DYNAMIC(CMiraDialog, CDialog)
+IMPLEMENT_DYNAMIC(MDialog, CDialog)
 
-BEGIN_MESSAGE_MAP(CMiraDialog, CDialog)
+BEGIN_MESSAGE_MAP(MDialog, CDialog)
     ON_WM_PAINT()
     ON_WM_NCHITTEST()
     ON_WM_SIZE()
 END_MESSAGE_MAP()
 
-CMiraDialog::CMiraDialog(UINT idd, CWnd *parent /* = 0 */)
+MDialog::MDialog(UINT idd, CWnd *parent /* = 0 */)
  : CDialog(idd, parent)
 {
 #ifndef _WIN32_WCE
@@ -44,21 +44,21 @@ CMiraDialog::CMiraDialog(UINT idd, CWnd *parent /* = 0 */)
   m_tooltip_created   = false;
 }
 
-CMiraDialog::~CMiraDialog()
+MDialog::~MDialog()
 {
 }
 
-void CMiraDialog::EnableSizeGrip(bool enable /* = true */)
+void MDialog::EnableSizeGrip(bool enable /* = true */)
 {
   if (! m_size_grip_created) {
-    TRACE("CMiraDialog::EnableSizeGrip: No size grip.\n");
+    TRACE("MDialog::EnableSizeGrip: No size grip.\n");
     return;
   }
 
-  m_size_grip.ShowWindow( (enable) ? SW_SHOW : SW_HIDE);
+  m_size_grip.ShowWindow((enable) ? SW_SHOW : SW_HIDE);
 }
 
-void CMiraDialog::CreateSizeGrip(bool visible /* = true */)
+void MDialog::CreateSizeGrip(bool visible /* = true */)
 {
   CRect r;
   DWORD style = 0;
@@ -82,13 +82,13 @@ void CMiraDialog::CreateSizeGrip(bool visible /* = true */)
 
   if ((GetStyle() & WS_THICKFRAME) != WS_THICKFRAME) {
     EnableSizeGrip(false);
-    TRACE("CMiraDialog::CreateSizeGrip: No resizable dialog border.\n");
+    TRACE("MDialog::CreateSizeGrip: No resizable dialog border.\n");
   }
 
   m_size_grip_created = true;
 }
 
-void CMiraDialog::CreateToolTip()
+void MDialog::CreateToolTip()
 {
   if (! m_tooltip.Create(this)) {
   }
@@ -100,13 +100,13 @@ void CMiraDialog::CreateToolTip()
   m_tooltip_created = true;
 }
 
-void CMiraDialog::AddToolTips()
+void MDialog::AddToolTips()
 {
   int   id;
   CWnd *win;
 
   if (! m_tooltip_created) {
-    TRACE("CMiraDialog::AddToolTips: No tooltip control.\n");
+    TRACE("MDialog::AddToolTips: No tooltip control.\n");
     return;
   }
 
@@ -127,21 +127,21 @@ void CMiraDialog::AddToolTips()
 //m_MinSize.x=m_rcDialog.Width();
 //m_MinSize.y=m_rcDialog.Height();
 
-void CMiraDialog::DoDataExchange(CDataExchange* pDX)
+void MDialog::DoDataExchange(CDataExchange* pDX)
 {
   CDialog::DoDataExchange(pDX);
 }
 
 // Do not call CDialog::OnPaint() for painting messages.
 
-void CMiraDialog::OnPaint()
+void MDialog::OnPaint()
 {
   //CPaintDC dc(this);                             // Device context for painting.
 
   CDialog::OnPaint();
 }
 
-LRESULT CMiraDialog::OnNcHitTest(CPoint point)
+LRESULT MDialog::OnNcHitTest(CPoint point)
 {
   LRESULT ht = CDialog::OnNcHitTest(point);
 
@@ -163,9 +163,9 @@ LRESULT CMiraDialog::OnNcHitTest(CPoint point)
   return ht;
 }
 
-void CMiraDialog::OnSize(UINT nType, int cx, int cy)
+void MDialog::OnSize(UINT nType, int cx, int cy)
 {
-  TRACE("CMiraDialog::OnSize\n");
+  TRACE("MDialog::OnSize\n");
 
   CDialog::OnSize(nType, cx, cy);
 
@@ -187,7 +187,7 @@ void CMiraDialog::OnSize(UINT nType, int cx, int cy)
   }
 }
 
-BOOL CMiraDialog::PreTranslateMessage(MSG* pMsg)
+BOOL MDialog::PreTranslateMessage(MSG* pMsg)
 {
   if (m_tooltip_created) {
     m_tooltip.RelayEvent(pMsg);

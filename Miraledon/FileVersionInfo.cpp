@@ -1,4 +1,4 @@
-// $Id: FileVersionInfo.cpp,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: FileVersionInfo.cpp,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -20,7 +20,7 @@
 
 /// \file FileVersionInfo.cpp
 /// \author Gerrit M. Albrecht
-/// \brief Contains the definition of the CFileVersionInfo class.
+/// \brief Contains the definition of the MFileVersionInfo class.
 
 #include "StdAfx.h"
 #include "FileVersionInfo.h"
@@ -32,18 +32,18 @@
 
 #pragma comment(lib, "version")
 
-CFileVersionInfo::CFileVersionInfo()
+MFileVersionInfo::MFileVersionInfo()
 {
   m_version_info_data = 0;
   m_lang_charset      = 0;
 }
 
-CFileVersionInfo::~CFileVersionInfo()
+MFileVersionInfo::~MFileVersionInfo()
 {
   Free();
 }
 
-BOOL CFileVersionInfo::Get(const CString &filename)
+BOOL MFileVersionInfo::Get(const CString &filename)
 {
   DWORD handle;
   DWORD length;
@@ -64,7 +64,7 @@ BOOL CFileVersionInfo::Get(const CString &filename)
   return TRUE;
 }
 
-void CFileVersionInfo::Free()
+void MFileVersionInfo::Free()
 {
   if (m_version_info_data) {
     delete [] m_version_info_data;
@@ -72,7 +72,7 @@ void CFileVersionInfo::Free()
   }
 }
 
-CString CFileVersionInfo::QueryValue(const CString &fieldname, DWORD langcharset)
+CString MFileVersionInfo::QueryValue(const CString &fieldname, DWORD langcharset)
 {
   CString result = _T("");
 
@@ -81,7 +81,7 @@ CString CFileVersionInfo::QueryValue(const CString &fieldname, DWORD langcharset
   if (m_version_info_data == 0)
     return result;
 
-  if (langcharset == 0)                          // No lang-charset specified, use default.
+  if (langcharset == 0)                                    // No lang-charset specified, use default.
     langcharset = m_lang_charset;
 
   UINT nQuerySize;

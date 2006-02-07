@@ -1,4 +1,4 @@
-// $Id: SizeGrip.cpp,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: SizeGrip.cpp,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -20,18 +20,18 @@
 
 /// \file SizeGrip.h
 /// \author Gerrit M. Albrecht
-/// \brief Contains the definition of the CSizeGrip class.
+/// \brief Contains the definition of the MSizeGrip class.
 
 #include "StdAfx.h"
 #include "SizeGrip.h"
 
-IMPLEMENT_DYNAMIC(CSizeGrip, CScrollBar)
+IMPLEMENT_DYNAMIC(MSizeGrip, CScrollBar)
 
-BEGIN_MESSAGE_MAP(CSizeGrip, CScrollBar)
+BEGIN_MESSAGE_MAP(MSizeGrip, CScrollBar)
     ON_WM_NCHITTEST()
 END_MESSAGE_MAP()
 
-CSizeGrip::CSizeGrip()
+MSizeGrip::MSizeGrip()
 {
 #ifndef _WIN32_WCE
   EnableActiveAccessibility();
@@ -39,16 +39,16 @@ CSizeGrip::CSizeGrip()
 
 }
 
-CSizeGrip::~CSizeGrip()
+MSizeGrip::~MSizeGrip()
 {
 }
 
-BOOL CSizeGrip::IsRTL() const
+BOOL MSizeGrip::IsRTL() const
 {
   return GetExStyle() & WS_EX_LAYOUTRTL;
 }
 
-LRESULT CSizeGrip::OnNcHitTest(CPoint point)
+LRESULT MSizeGrip::OnNcHitTest(CPoint point)
 {
   LRESULT ht = CScrollBar::OnNcHitTest(point);
 

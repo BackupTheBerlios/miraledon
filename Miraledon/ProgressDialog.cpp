@@ -1,4 +1,4 @@
-// $Id: ProgressDialog.cpp,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: ProgressDialog.cpp,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -18,31 +18,31 @@
 // License along with this library; if not, write to the Free Software
 // Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
-/// \file MiraProgressDialog.cpp
+/// \file ProgressDialog.cpp
 /// \author Gerrit M. Albrecht
-/// \brief Contains the definition of the CMiraProgressDialog class.
+/// \brief Contains the definition of the MProgressDialog class.
 
 #include "StdAfx.h"
-#include "MiraProgressDialog.h"
+#include "ProgressDialog.h"
 
-IMPLEMENT_DYNAMIC(CMiraProgressDialog, CMiraDialog)
+IMPLEMENT_DYNAMIC(MProgressDialog, MDialog)
 
-BEGIN_MESSAGE_MAP(CMiraProgressDialog, CMiraDialog)
+BEGIN_MESSAGE_MAP(MProgressDialog, MDialog)
 END_MESSAGE_MAP()
 
-CMiraProgressDialog::CMiraProgressDialog(UINT idd, CWnd *parent /* = NULL */)
- : CMiraDialog(idd, parent)
+MProgressDialog::MProgressDialog(UINT idd, CWnd *parent /* = NULL */)
+ : MDialog(idd, parent)
 {
 #ifndef _WIN32_WCE
   EnableActiveAccessibility();
 #endif
 }
 
-CMiraProgressDialog::~CMiraProgressDialog()
+MProgressDialog::~MProgressDialog()
 {
 }
 
-void CMiraProgressDialog::DoDataExchange(CDataExchange* pDX)
+void MProgressDialog::DoDataExchange(CDataExchange* pDX)
 {
-  CMiraDialog::DoDataExchange(pDX);
+  MDialog::DoDataExchange(pDX);
 }

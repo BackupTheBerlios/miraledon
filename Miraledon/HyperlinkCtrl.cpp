@@ -1,4 +1,4 @@
-// $Id: HyperlinkCtrl.cpp,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: HyperlinkCtrl.cpp,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -20,23 +20,23 @@
 
 /// \file HyperlinkCtrl.h
 /// \author Gerrit M. Albrecht
-/// \brief Contains the definition of the CHyperlinkCtrl class.
+/// \brief Contains the definition of the MHyperlinkCtrl class.
 
 #include "StdAfx.h"
 #include "HyperlinkCtrl.h"
 
-IMPLEMENT_DYNAMIC(CHyperlinkCtrl, CStatic)
+IMPLEMENT_DYNAMIC(MHyperlinkCtrl, CStatic)
 
-BEGIN_MESSAGE_MAP(CHyperlinkCtrl, CStatic)
+BEGIN_MESSAGE_MAP(MHyperlinkCtrl, CStatic)
 END_MESSAGE_MAP()
 
-CHyperlinkCtrl::CHyperlinkCtrl()
+MHyperlinkCtrl::MHyperlinkCtrl()
 {
 #ifndef _WIN32_WCE
   EnableActiveAccessibility();
 #endif
 }
 
-CHyperlinkCtrl::~CHyperlinkCtrl()
+MHyperlinkCtrl::~MHyperlinkCtrl()
 {
 }

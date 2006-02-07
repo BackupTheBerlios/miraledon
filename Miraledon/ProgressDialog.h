@@ -1,4 +1,4 @@
-// $Id: ProgressDialog.h,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: ProgressDialog.h,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -18,31 +18,31 @@
 // License along with this library; if not, write to the Free Software
 // Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
-/// \file MiraProgressDialog.cpp
+/// \file ProgressDialog.cpp
 /// \author Gerrit M. Albrecht
-/// \brief Contains the declaration of the CMiraProgressDialog class.
+/// \brief Contains the declaration of the MProgressDialog class.
 
 #pragma once
 
-#include "MiraDialog.h"
+#include <Miraledon/Dialog.h>
 
 /// \brief This class implements a progress dialog.
 ///
-/// CMiraProgressDialog is an extension for the CMiraDialog class.
+/// MProgressDialog is an extension for the CMiraDialog class.
 /// It dispalys a progress bar, an animation, a current action text
 /// and an percent value for the progress. This dialog contains only
 /// a cancel button.
 
-class CMiraProgressDialog : public CMiraDialog
+class MProgressDialog : public MDialog
 {
-  DECLARE_DYNAMIC(CMiraProgressDialog)
+  DECLARE_DYNAMIC(MProgressDialog)
 
   public:
     /// Standard constructor.
-    CMiraProgressDialog(UINT idd, CWnd *parent = NULL);
+    MProgressDialog(UINT idd, CWnd *parent = NULL);
 
     /// Destructor.
-    virtual ~CMiraProgressDialog();
+    virtual ~MProgressDialog();
 
   protected:
     virtual void DoDataExchange(CDataExchange* pDX);

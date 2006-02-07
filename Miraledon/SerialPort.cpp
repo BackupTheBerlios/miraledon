@@ -1,4 +1,4 @@
-// $Id: SerialPort.cpp,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: SerialPort.cpp,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -20,41 +20,41 @@
 
 /// \file SerialPort.cpp
 /// \author Gerrit M. Albrecht
-/// \brief Contains the definition of the CSerialPort class.
+/// \brief Contains the definition of the MSerialPort class.
 
 #include "StdAfx.h"
 #include "SerialPort.h"
 
-CSerialPort::CSerialPort()
+MSerialPort::MSerialPort()
 {
   m_name = _T("COM0");
 }
 
-CSerialPort::~CSerialPort()
+MSerialPort::~MSerialPort()
 {
 }
 
-void CSerialPort::LockBuffer()
+void MSerialPort::LockBuffer()
 {
   ::EnterCriticalSection(&m_lock);
 }
 
-void CSerialPort::UnLockBuffer()
+void MSerialPort::UnLockBuffer()
 {
   ::LeaveCriticalSection(&m_lock);
 }
 
-void CSerialPort::SelectPort (int number)
+void MSerialPort::SelectPort(int number)
 {
   if ((number < 0) || (number > 20)) {
-    TRACE("CSerialPort::SelectPort number=%d\n", number);
+    TRACE("MSerialPort::SelectPort number=%d\n", number);
     number = 0;
   }
 
   m_name.Format(_T("COM%d"), number);
 }
 
-bool CSerialPort::OpenPort (int number)
+bool MSerialPort::OpenPort(int number)
 {
   SelectPort(number);
 
@@ -108,12 +108,12 @@ bool CSerialPort::OpenPort (int number)
 
   m_is_ready = SetCommTimeouts(m_handle, &m_timeouts);
 
-  m_is_open = true;                                                  // Now the port is ready for use.
+  m_is_open = true;                                        // Now the port is ready for use.
 
   return true;
 }
 
-void CSerialPort::ClosePort ()
+void MSerialPort::ClosePort ()
 {
   m_is_open = false;
 
@@ -121,7 +121,7 @@ void CSerialPort::ClosePort ()
     CloseHandle(m_handle);
 }
 
-CString &CSerialPort::GetPortName ()
+CString &MSerialPort::GetPortName ()
 {
   return m_name;
 }

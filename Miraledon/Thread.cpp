@@ -1,4 +1,4 @@
-// $Id: Thread.cpp,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: Thread.cpp,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -18,9 +18,9 @@
 // License along with this library; if not, write to the Free Software
 // Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
-/// \file SerialPort.cpp
+/// \file Thread.cpp
 /// \author Don't know, CodeGuru or CodeProject.
-/// \brief Contains the definition of the CThread class.
+/// \brief Contains the definition of the MThread class.
 
 #include "StdAfx.h"
 #include "Thread.h"
@@ -45,19 +45,19 @@ DWORD WINAPI _ThreadFunc(LPVOID pvThread)
   return 0;
 }
 
-CThread::CThread()
+MThread::MThread()
  : m_is_active(false),
    m_is_suspended(false)
 {
 }
 
-CThread::~CThread()
+MThread::~MThread()
 {
   if (m_is_active)
     Kill();
 }
 
-bool CThread::Create()
+bool MThread::Create()
 {
   m_handle = CreateThread(NULL,
                           0,
@@ -75,14 +75,14 @@ bool CThread::Create()
   return true;
 }
 
-bool CThread::Wait()                   // Wait for thread to end.
+bool MThread::Wait()                                       // Wait for thread to end.
 {
   OnWait();
 
   return (WAIT_OBJECT_0 == ::WaitForSingleObject(m_handle, INFINITE));
 }
 
-bool CThread::Suspend()                // Suspend the thread.
+bool MThread::Suspend()                                    // Suspend the thread.
 {
   if (m_is_active) {
     OnSuspend();
@@ -95,7 +95,7 @@ bool CThread::Suspend()                // Suspend the thread.
   return false;
 }
 
-bool CThread::Resume()                 // Resume a suspended thread.
+bool MThread::Resume()                                     // Resume a suspended thread.
 {
   if (m_is_suspended && m_is_active) {
     DWORD rc = ::ResumeThread(m_handle);
@@ -110,21 +110,21 @@ bool CThread::Resume()                 // Resume a suspended thread.
    return false;
 }
 
-bool CThread::Kill()                   // Terminate a thread.
+bool MThread::Kill()                                       // Terminate a thread.
 {
-  OnKill();                            // Einheitlicher Ausgang.
+  OnKill();                                                // Einheitlicher Ausgang.
 
   m_is_active = false;
 
   return (::TerminateThread(m_handle, 1) == TRUE) ? true : false;
 }
 
-bool CThread::IsActive()               // Check for activity.
+bool MThread::IsActive()                                   // Check for activity.
 {
   return m_is_active;
 }
 
-bool CThread::IsSuspended()            // Check for sleep mode.
+bool MThread::IsSuspended()                                // Check for sleep mode.
 {
   return m_is_suspended;
 }

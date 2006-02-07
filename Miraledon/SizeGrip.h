@@ -1,4 +1,4 @@
-// $Id: SizeGrip.h,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: SizeGrip.h,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -20,7 +20,7 @@
 
 /// \file SizeGrip.h
 /// \author Gerrit M. Albrecht
-/// \brief Contains the declaration of the CSizeGrip class.
+/// \brief Contains the declaration of the MSizeGrip class.
 
 #pragma once
 
@@ -34,13 +34,13 @@
 /// One may use a status bar control (simple window with a SBS_SIZEGRIP set. I derive
 /// from a scrollbar.
 
-class CSizeGrip : public CScrollBar
+class MSizeGrip : public CScrollBar
 {
-  DECLARE_DYNAMIC(CSizeGrip)
+  DECLARE_DYNAMIC(MSizeGrip)
 
   public:
-    CSizeGrip();
-    virtual ~CSizeGrip();
+    MSizeGrip();
+    virtual ~MSizeGrip();
 
     BOOL IsRTL() const;
 

@@ -1,0 +1,5 @@
+BuildLog.htm
+*.obj
+*.manifest
+*.pch
+vc80.idb

@@ -1,4 +1,4 @@
-// $Id: Dialog.h,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: Dialog.h,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -18,29 +18,29 @@
 // License along with this library; if not, write to the Free Software
 // Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
-/// \file MiraDialog.h
+/// \file Dialog.h
 /// \author Gerrit M. Albrecht
-/// \brief Contains the declaration of the CMiraDialog class.
+/// \brief Contains the declaration of the MDialog class.
 
 #pragma once
 
-#include "SizeGrip.h"
+#include <Miraledon/SizeGrip.h>
 
 /// \brief This is an enhanced CDialog.
 ///
 /// This class is able to show a size grip an it's corner.
 /// More features will follow.
 
-class CMiraDialog : public CDialog
+class MDialog : public CDialog
 {
-  DECLARE_DYNAMIC(CMiraDialog)
+  DECLARE_DYNAMIC(MDialog)
 
   public:
     /// Standard constructor.
-    CMiraDialog(UINT idd, CWnd *parent = 0);
+    MDialog(UINT idd, CWnd *parent = 0);
 
     /// Destructor.
-    virtual ~CMiraDialog();
+    virtual ~MDialog();
 
   protected:
     /// Enables the size grip for this dialog.
@@ -69,10 +69,10 @@ class CMiraDialog : public CDialog
     DECLARE_MESSAGE_MAP()
 
   protected:
-    bool          m_size_grip_created;
-    CSizeGrip     m_size_grip;
-    bool          m_tooltip_created;
-    CToolTipCtrl  m_tooltip;
+    bool          m_size_grip_created;         ///< The size grip is an optional feature.
+    MSizeGrip     m_size_grip;                 ///< Holds the size grip control.
+    bool          m_tooltip_created;           ///< The tooltip is an optional feature.
+    CToolTipCtrl  m_tooltip;                   ///< Holds the tooltip control.
     UINT          m_min_size_x;
     UINT          m_min_size_y;
 

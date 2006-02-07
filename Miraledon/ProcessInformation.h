@@ -1,4 +1,4 @@
-// $Id: ProcessInformation.h,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: ProcessInformation.h,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -20,7 +20,7 @@
 
 /// \file ProcessInformation.h
 /// \author Gerrit M. Albrecht
-/// \brief Contains the declaration of the CProcessInformation class.
+/// \brief Contains the declaration of the MProcessInformation class.
 
 #pragma once
 
@@ -38,14 +38,14 @@ BOOL CALLBACK MyProcessEnumerator(DWORD dwPID, WORD wTask, LPCTSTR szProcess, LP
 /// enumerate the processes calling a callback function once for each process. The callback function
 /// has to be defined by the user.
 
-class CProcessInformation
+class MProcessInformation
 {
   public:
     /// Standard constructor.
-    CProcessInformation();
+    MProcessInformation();
 
     /// Destructor.
-    virtual ~CProcessInformation();
+    virtual ~MProcessInformation();
 
     /// Enumerates all processes and calls a callback function for each process.
     ///

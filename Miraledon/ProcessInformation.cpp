@@ -1,4 +1,4 @@
-// $Id: ProcessInformation.cpp,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: ProcessInformation.cpp,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -20,7 +20,7 @@
 
 /// \file ProcessInformation.cpp
 /// \author Gerrit M. Albrecht
-/// \brief Contains the definition of the CProcessInformation class.
+/// \brief Contains the definition of the MProcessInformation class.
 
 #include "StdAfx.h"
 #include "ProcessInformation.h"
@@ -31,20 +31,20 @@
 
 #pragma warning(disable: 4101 4189)
 
-CProcessInformation::CProcessInformation()
+MProcessInformation::MProcessInformation()
 {
 }
 
-CProcessInformation::~CProcessInformation()
+MProcessInformation::~MProcessInformation()
 {
 }
 
 // Enumerates processes the Microsoft way:
 // http://support.microsoft.com/default.aspx?scid=kb;en-us;Q175030
 
-BOOL CProcessInformation::EnumProcs32(PROCENUMPROC lpProc, LPARAM lParam)
+BOOL MProcessInformation::EnumProcs32(PROCENUMPROC lpProc, LPARAM lParam)
 {
-  COperatingSystem os;
+  MOperatingSystem os;
 
   HMODULE        lib1 = NULL;
   HMODULE        lib2 = NULL;

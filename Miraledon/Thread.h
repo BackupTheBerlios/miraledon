@@ -1,4 +1,4 @@
-// $Id: Thread.h,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: Thread.h,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -18,9 +18,9 @@
 // License along with this library; if not, write to the Free Software
 // Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
-/// \file SerialPort.h
+/// \file Thread.h
 /// \author Don't know, CodeGuru or CodeProject.
-/// \brief Contains the declaration of the CThread class.
+/// \brief Contains the declaration of the MThread class.
 
 #pragma once
 
@@ -29,11 +29,11 @@
 /// This class manages a single thread. You have to derive from this class and override the
 /// needed virtual methods.
 
-class CThread
+class MThread
 {
   public:
-    CThread();
-    virtual ~CThread();
+    MThread();
+    virtual ~MThread();
 
     // Thread Management.
 
@@ -59,8 +59,8 @@ class CThread
     friend DWORD WINAPI _ThreadFunc(LPVOID  pvThread);
 
   protected:
-    HANDLE m_handle;        // Thread handle.
-    bool   m_is_active;     // Activity indicator.
-    bool   m_is_suspended;  // Suspended flag.
-    DWORD  m_id;            // Thread ID.
+    HANDLE m_handle;                                       ///< Thread handle.
+    bool   m_is_active;                                    ///< Activity indicator.
+    bool   m_is_suspended;                                 ///< Suspended flag.
+    DWORD  m_id;                                           ///< Thread ID.
 };

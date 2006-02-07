@@ -1,4 +1,4 @@
-// $Id: ListCtrl.cpp,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: ListCtrl.cpp,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -19,25 +19,25 @@
 // Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
 #include "StdAfx.h"
-#include "MiraListCtrl.h"
+#include "ListCtrl.h"
 
-IMPLEMENT_DYNAMIC(CMiraListCtrl, CListCtrl)
+IMPLEMENT_DYNAMIC(MListCtrl, CListCtrl)
 
-BEGIN_MESSAGE_MAP(CMiraListCtrl, CListCtrl)
+BEGIN_MESSAGE_MAP(MListCtrl, CListCtrl)
 END_MESSAGE_MAP()
 
-CMiraListCtrl::CMiraListCtrl()
+MListCtrl::MListCtrl()
 {
 #ifndef _WIN32_WCE
   EnableActiveAccessibility();
 #endif
 }
 
-CMiraListCtrl::~CMiraListCtrl()
+MListCtrl::~MListCtrl()
 {
 }
 
-int CMiraListCtrl::GetColumnCount() const
+int MListCtrl::GetColumnCount() const
 {
   CHeaderCtrl *hdr = (CHeaderCtrl *) GetDlgItem(0);        // Get the header control.
 
@@ -59,7 +59,7 @@ int CMiraListCtrl::GetColumnCount() const
 // my custom version of this to avoid problems with nested calls to
 // SetRedraw (and to remove the need for a final call to Invalidate()).
 
-void CMiraListCtrl::AutoSizeColumn(int col)
+void MListCtrl::AutoSizeColumn(int col)
 {
   const int MINCOLWIDTH = 10;
 
@@ -77,7 +77,7 @@ void CMiraListCtrl::AutoSizeColumn(int col)
   Invalidate();
 }
 
-void CMiraListCtrl::AutoSizeColumns()
+void MListCtrl::AutoSizeColumns()
 {
   SetRedraw(FALSE);
 
@@ -93,50 +93,57 @@ void CMiraListCtrl::AutoSizeColumns()
   Invalidate();
 }
 
-BOOL CMiraListCtrl::AddColumn(LPCTSTR strItem,int nItem,int nSubItem,int nMask,int nFmt)
+BOOL MListCtrl::AddColumn(LPCTSTR strItem,int nItem,int nSubItem,int nMask,int nFmt)
 {
 	LV_COLUMN lvc;
 	lvc.mask = nMask;
 	lvc.fmt = nFmt;
 	lvc.pszText = (LPTSTR) strItem;
 	lvc.cx = GetStringWidth(lvc.pszText) + 15;
-	if(nMask & LVCF_SUBITEM){
+
+  if (nMask & LVCF_SUBITEM) {
 		if(nSubItem != -1)
 			lvc.iSubItem = nSubItem;
 		else
 			lvc.iSubItem = nItem;
-	}
-	return InsertColumn(nItem,&lvc);
+  }
+
+  return InsertColumn(nItem,&lvc);
 }
 
-BOOL CMiraListCtrl::AddItem(int nItem,int nSubItem,LPCTSTR strItem,int nImageIndex)
+BOOL MListCtrl::AddItem(int nItem, int nSubItem, LPCTSTR strItem, int nImageIndex)
 {
-	LV_ITEM lvItem;
-	lvItem.mask = LVIF_TEXT;
-	lvItem.iItem = nItem;
-	lvItem.iSubItem = nSubItem;
-	lvItem.pszText = (LPTSTR) strItem;
-	if(nImageIndex != -1){
-		lvItem.mask |= LVIF_IMAGE;
-		lvItem.iImage |= LVIF_IMAGE;
-	}
-	if(nSubItem == 0)
-		return InsertItem(&lvItem);
+  LV_ITEM item;
 
-  return SetItem(&lvItem);
+  item.mask     = LVIF_TEXT;
+  item.iItem    = nItem;
+  item.iSubItem = nSubItem;
+  item.pszText  = (LPTSTR) strItem;
+
+  if (nImageIndex != -1) {
+    item.mask |= LVIF_IMAGE;
+    item.iImage |= LVIF_IMAGE;
+  }
+
+  if (nSubItem == 0)
+    return InsertItem(&item);
+
+  return SetItem(&item);
 }
 
-BOOL CMiraListCtrl::ReplaceItem(int nItem,int nSubItem,LPCTSTR strItem,int nImageIndex)
+BOOL MListCtrl::ReplaceItem(int nItem, int nSubItem, LPCTSTR strItem, int nImageIndex)
 {
-	LV_ITEM lvItem;
-	lvItem.mask = LVIF_TEXT;
-	lvItem.iItem = nItem;
-	lvItem.iSubItem = nSubItem;
-	lvItem.pszText = (LPTSTR) strItem;
-	if(nImageIndex != -1){
-		lvItem.mask |= LVIF_IMAGE;
-		lvItem.iImage |= LVIF_IMAGE;
-	}
+  LV_ITEM item;
 
-  return SetItem(&lvItem);
+  item.mask     = LVIF_TEXT;
+  item.iItem    = nItem;
+  item.iSubItem = nSubItem;
+  item.pszText  = (LPTSTR) strItem;
+
+  if (nImageIndex != -1) {
+    item.mask |= LVIF_IMAGE;
+    item.iImage |= LVIF_IMAGE;
+  }
+
+  return SetItem(&item);
 }
