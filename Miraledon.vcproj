@@ -189,19 +189,19 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\src\FileVersionInfo.cpp"
+				RelativePath=".\Miraledon\FileVersionInfo.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\HyperlinkCtrl.cpp"
+				RelativePath=".\Miraledon\HyperlinkCtrl.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\MemDC.cpp"
+				RelativePath=".\Miraledon\MemDC.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\MiraDialog.cpp"
+				RelativePath=".\Miraledon\Dialog.cpp"
 				>
 			</File>
 			<File
@@ -213,35 +213,35 @@
 				>
 			</File>
 			<File
-				RelativePath=".\src\MiraListCtrl.cpp"
+				RelativePath=".\Miraledon\ListCtrl.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\MiraProgressDialog.cpp"
+				RelativePath=".\Miraledon\ProgressDialog.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\MiraSplitter.cpp"
+				RelativePath=".\Miraledon\Splitter.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\MiraTreeCtrl.cpp"
+				RelativePath=".\Miraledon\TreeCtrl.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\OperatingSystem.cpp"
+				RelativePath=".\Miraledon\OperatingSystem.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\ProcessInformation.cpp"
+				RelativePath=".\Miraledon\ProcessInformation.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\SerialPort.cpp"
+				RelativePath=".\Miraledon\SerialPort.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\SizeGrip.cpp"
+				RelativePath=".\Miraledon\SizeGrip.cpp"
 				>
 			</File>
 			<File
@@ -265,19 +265,19 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath=".\src\Thread.cpp"
+				RelativePath=".\Miraledon\Thread.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\TrayIcon.cpp"
+				RelativePath=".\Miraledon\TrayIcon.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\TreeListCtrl.cpp"
+				RelativePath=".\Miraledon\TreeListCtrl.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\TreeListView.cpp"
+				RelativePath=".\Miraledon\TreeListView.cpp"
 				>
 			</File>
 		</Filter>
@@ -287,43 +287,43 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath=".\src\FileVersionInfo.h"
+				RelativePath=".\Miraledon\FileVersionInfo.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\HyperlinkCtrl.h"
+				RelativePath=".\Miraledon\HyperlinkCtrl.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\MemDC.h"
+				RelativePath=".\Miraledon\MemDC.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\MiraDialog.h"
+				RelativePath=".\Miraledon\Dialog.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\MiraListCtrl.h"
+				RelativePath=".\Miraledon\ListCtrl.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\MiraProgressDialog.h"
+				RelativePath=".\Miraledon\ProgressDialog.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\MiraSplitter.h"
+				RelativePath=".\Miraledon\Splitter.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\MiraTreeCtrl.h"
+				RelativePath=".\Miraledon\TreeCtrl.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\OperatingSystem.h"
+				RelativePath=".\Miraledon\OperatingSystem.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\ProcessInformation.h"
+				RelativePath=".\Miraledon\ProcessInformation.h"
 				>
 			</File>
 			<File
@@ -331,11 +331,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\src\SerialPort.h"
+				RelativePath=".\Miraledon\SerialPort.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\SizeGrip.h"
+				RelativePath=".\Miraledon\SizeGrip.h"
 				>
 			</File>
 			<File
@@ -343,19 +343,19 @@
 				>
 			</File>
 			<File
-				RelativePath=".\src\Thread.h"
+				RelativePath=".\Miraledon\Thread.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\TrayIcon.h"
+				RelativePath=".\Miraledon\TrayIcon.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\TreeListCtrl.h"
+				RelativePath=".\Miraledon\TreeListCtrl.h"
 				>
 			</File>
 			<File
-				RelativePath=".\src\TreeListView.h"
+				RelativePath=".\Miraledon\TreeListView.h"
 				>
 			</File>
 		</Filter>
