@@ -1,4 +1,4 @@
-// $Id: Splitter.cpp,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: Splitter.cpp,v 1.2 2006/02/07 15:54:19 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -20,19 +20,19 @@
 
 /// \file MiraSplitter.cpp
 /// \author Gerrit M. Albrecht
-/// \brief Contains the definition of the CMiraSplitter class.
+/// \brief Contains the definition of the MSplitter class.
 
 #include "StdAfx.h"
-#include "MiraSplitter.h"
+#include "Splitter.h"
 
-BEGIN_MESSAGE_MAP(CMiraSplitter, CSplitterWnd)
+BEGIN_MESSAGE_MAP(MSplitter, CSplitterWnd)
 	ON_WM_MOUSEMOVE()
 	ON_WM_LBUTTONDOWN()
     ON_WM_CREATE()
     ON_WM_ERASEBKGND()
 END_MESSAGE_MAP()
 
-CMiraSplitter::CMiraSplitter()
+MSplitter::MSplitter()
 {
   EnableActiveAccessibility();
 
@@ -40,7 +40,7 @@ CMiraSplitter::CMiraSplitter()
   m_move_and_refresh = true;
 }
 
-CMiraSplitter::~CMiraSplitter()
+MSplitter::~MSplitter()
 {
 }
 
@@ -59,7 +59,7 @@ enum HitTestValue
   splitterIntersection225 = 525
 };
 
-void CMiraSplitter::OnMouseMove(UINT nFlags, CPoint pt)
+void MSplitter::OnMouseMove(UINT nFlags, CPoint pt)
 {
   if (GetCapture() != this)                      // Check if we own the mouse.
     StopTracking(FALSE);
@@ -128,7 +128,7 @@ void CMiraSplitter::OnMouseMove(UINT nFlags, CPoint pt)
 
 // Stores the mouse position on left click.
 
-void CMiraSplitter::OnLButtonDown(UINT nFlags, CPoint pt)
+void MSplitter::OnLButtonDown(UINT nFlags, CPoint pt)
 {
   m_pos_x = pt.x;
   m_pos_y = pt.y;
@@ -136,7 +136,7 @@ void CMiraSplitter::OnLButtonDown(UINT nFlags, CPoint pt)
   CSplitterWnd::OnLButtonDown(nFlags, pt);
 }
 
-void CMiraSplitter::OnInvertTracker(const CRect& rect)
+void MSplitter::OnInvertTracker(const CRect& rect)
 {
   if (m_move_and_refresh)                                  // We don't need to paint an inverted tracker
     return;                                                // if we refresh after every mouse move.
@@ -161,7 +161,7 @@ void CMiraSplitter::OnInvertTracker(const CRect& rect)
   ReleaseDC(pDC);
 }
 
-int CMiraSplitter::OnCreate(LPCREATESTRUCT lpCreateStruct)
+int MSplitter::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
   if (CSplitterWnd::OnCreate(lpCreateStruct) == -1)
     return -1;
@@ -171,7 +171,7 @@ int CMiraSplitter::OnCreate(LPCREATESTRUCT lpCreateStruct)
   return 0;
 }
 
-BOOL CMiraSplitter::OnEraseBkgnd(CDC* pDC)
+BOOL MSplitter::OnEraseBkgnd(CDC* pDC)
 {
   UNUSED_ALWAYS(pDC);
 

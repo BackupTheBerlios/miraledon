@@ -1,4 +1,4 @@
-// $Id: TreeListView.cpp,v 1.1 2006/02/07 13:36:46 gerrit-albrecht Exp $
+// $Id: TreeListView.cpp,v 1.2 2006/02/07 15:54:19 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -21,12 +21,12 @@
 #include "StdAfx.h"
 #include "TreeListView.h"
 
-IMPLEMENT_DYNCREATE(CTreeListView, CCtrlView)
+IMPLEMENT_DYNCREATE(MTreeListView, CCtrlView)
 
-BEGIN_MESSAGE_MAP(CTreeListView, CCtrlView)
+BEGIN_MESSAGE_MAP(MTreeListView, CCtrlView)
 END_MESSAGE_MAP()
 
-CTreeListView::CTreeListView()
+MTreeListView::MTreeListView()
  : CCtrlView(WC_TREEVIEW, AFX_WS_DEFAULT_VIEW)   // We have more common with a tree than with a list view.
 {
 #ifndef _WIN32_WCE
@@ -34,18 +34,18 @@ CTreeListView::CTreeListView()
 #endif
 }
 
-CTreeListView::~CTreeListView()
+MTreeListView::~MTreeListView()
 {
 }
 
 #ifdef _DEBUG
-void CTreeListView::AssertValid() const
+void MTreeListView::AssertValid() const
 {
   CCtrlView::AssertValid();
 }
 
 #ifndef _WIN32_WCE
-void CTreeListView::Dump(CDumpContext& dc) const
+void MTreeListView::Dump(CDumpContext& dc) const
 {
   CCtrlView::Dump(dc);
 }

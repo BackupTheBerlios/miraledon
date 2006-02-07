@@ -1,4 +1,4 @@
-// $Id: TreeCtrl.cpp,v 1.1 2006/02/07 13:36:46 gerrit-albrecht Exp $
+// $Id: TreeCtrl.cpp,v 1.2 2006/02/07 15:54:19 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -19,20 +19,20 @@
 // Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
 #include "StdAfx.h"
-#include "MiraTreeCtrl.h"
+#include "TreeCtrl.h"
 
-IMPLEMENT_DYNAMIC(CMiraTreeCtrl, CTreeCtrl)
+IMPLEMENT_DYNAMIC(MTreeCtrl, CTreeCtrl)
 
-BEGIN_MESSAGE_MAP(CMiraTreeCtrl, CTreeCtrl)
+BEGIN_MESSAGE_MAP(MTreeCtrl, CTreeCtrl)
 END_MESSAGE_MAP()
 
-CMiraTreeCtrl::CMiraTreeCtrl()
+MTreeCtrl::MTreeCtrl()
 {
 #ifndef _WIN32_WCE
   EnableActiveAccessibility();
 #endif
 }
 
-CMiraTreeCtrl::~CMiraTreeCtrl()
+MTreeCtrl::~MTreeCtrl()
 {
 }

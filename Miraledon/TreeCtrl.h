@@ -1,4 +1,4 @@
-// $Id: TreeCtrl.h,v 1.1 2006/02/07 13:36:46 gerrit-albrecht Exp $
+// $Id: TreeCtrl.h,v 1.2 2006/02/07 15:54:19 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -20,13 +20,13 @@
 
 #pragma once
 
-class CMiraTreeCtrl : public CTreeCtrl
+class MTreeCtrl : public CTreeCtrl
 {
-  DECLARE_DYNAMIC(CMiraTreeCtrl)
+  DECLARE_DYNAMIC(MTreeCtrl)
 
   public:
-    CMiraTreeCtrl();
-    virtual ~CMiraTreeCtrl();
+    MTreeCtrl();
+    virtual ~MTreeCtrl();
 
   protected:
     DECLARE_MESSAGE_MAP()

@@ -1,4 +1,4 @@
-// $Id: TrayIcon.cpp,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: TrayIcon.cpp,v 1.2 2006/02/07 15:54:19 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -20,26 +20,26 @@
 
 /// \file TrayIcon.cpp
 /// \author Gerrit M. Albrecht
-/// \brief Contains the definition of the CTrayIcon class.
+/// \brief Contains the definition of the MTrayIcon class.
 
 #include "StdAfx.h"
 #include "TrayIcon.h"
 
-IMPLEMENT_DYNAMIC(CTrayIcon, CCmdTarget)
+IMPLEMENT_DYNAMIC(MTrayIcon, CCmdTarget)
 
-BEGIN_MESSAGE_MAP(CTrayIcon, CCmdTarget)
+BEGIN_MESSAGE_MAP(MTrayIcon, CCmdTarget)
 END_MESSAGE_MAP()
 
-CTrayIcon::CTrayIcon()
+MTrayIcon::MTrayIcon()
 {
   m_nid.cbSize = sizeof(NOTIFYICONDATA);
 }
 
-CTrayIcon::~CTrayIcon()
+MTrayIcon::~MTrayIcon()
 {
 }
 
-bool CTrayIcon::AddIcon (unsigned int icon_id, const CString &tip, const CWnd &target)
+bool MTrayIcon::AddIcon (unsigned int icon_id, const CString &tip, const CWnd &target)
 {
   HINSTANCE inst;
   HANDLE    icon;
@@ -65,7 +65,7 @@ bool CTrayIcon::AddIcon (unsigned int icon_id, const CString &tip, const CWnd &t
   return true;                                             // No errors.
 }
 
-bool CTrayIcon::RemoveIcon ()
+bool MTrayIcon::RemoveIcon ()
 {
   Shell_NotifyIcon(NIM_DELETE, &m_nid);
 

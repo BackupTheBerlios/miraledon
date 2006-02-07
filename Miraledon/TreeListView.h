@@ -1,4 +1,4 @@
-// $Id: TreeListView.h,v 1.1 2006/02/07 13:36:46 gerrit-albrecht Exp $
+// $Id: TreeListView.h,v 1.2 2006/02/07 15:54:19 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -20,13 +20,13 @@
 
 #pragma once
 
-class CTreeListView : public CCtrlView
+class MTreeListView : public CCtrlView
 {
-    DECLARE_DYNCREATE(CTreeListView)
+  DECLARE_DYNCREATE(CTreeListView)
 
   protected:
-    CTreeListView();           // protected constructor used by dynamic creation
-    virtual ~CTreeListView();
+    MTreeListView();           // protected constructor used by dynamic creation
+    virtual ~MTreeListView();
 
 /*
 // NOTE: The cast in GetListCtrl is ugly, but must be preserved for compatibility.

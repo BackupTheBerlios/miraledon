@@ -1,4 +1,4 @@
-// $Id: Splitter.h,v 1.1 2006/02/07 13:36:45 gerrit-albrecht Exp $
+// $Id: Splitter.h,v 1.2 2006/02/07 15:54:19 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -20,27 +20,27 @@
 
 /// \file MiraSplitter.cpp
 /// \author Gerrit M. Albrecht
-/// \brief Contains the declaration of the CMiraSplitter class.
+/// \brief Contains the declaration of the MSplitter class.
 
 #pragma once
 
 /// \brief This class extends the MFC CSplitterWnd class.
 ///
-/// CMiraSplitter is an extension for the MFC CSplitterWnd class.
+/// MSplitter is an extension for the MFC CSplitterWnd class.
 /// Currently it implements a splitter which updates it's contents
 /// while dragging the tracker bar with the mouse. Unfortunately
 /// it's flickering something so this feature can be disabled.
 
-class CMiraSplitter : public CSplitterWnd
+class MSplitter : public CSplitterWnd
 {
   public:
     /// Standard constructor.
-    CMiraSplitter();
+    MSplitter();
 
     /// Destructor.
-    virtual ~CMiraSplitter();
+    virtual ~MSplitter();
 
-    //{{AFX_VIRTUAL(CMiraSplitter)
+    //{{AFX_VIRTUAL(MSplitter)
     //}}AFX_VIRTUAL
 
   protected:

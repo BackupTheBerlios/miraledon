@@ -1,4 +1,4 @@
-// $Id: TreeListCtrl.cpp,v 1.1 2006/02/07 13:36:46 gerrit-albrecht Exp $
+// $Id: TreeListCtrl.cpp,v 1.2 2006/02/07 15:54:19 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -21,18 +21,18 @@
 #include "StdAfx.h"
 #include "TreeListCtrl.h"
 
-IMPLEMENT_DYNAMIC(CTreeListCtrl, CTreeCtrl)
+IMPLEMENT_DYNAMIC(MTreeListCtrl, CTreeCtrl)
 
-BEGIN_MESSAGE_MAP(CTreeListCtrl, CTreeCtrl)
+BEGIN_MESSAGE_MAP(MTreeListCtrl, CTreeCtrl)
 END_MESSAGE_MAP()
 
-CTreeListCtrl::CTreeListCtrl()
+MTreeListCtrl::MTreeListCtrl()
 {
 #ifndef _WIN32_WCE
   EnableActiveAccessibility();
 #endif
 }
 
-CTreeListCtrl::~CTreeListCtrl()
+MTreeListCtrl::~MTreeListCtrl()
 {
 }
