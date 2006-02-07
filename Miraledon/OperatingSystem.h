@@ -1,4 +1,4 @@
-// $Id: OperatingSystem.h,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
+// $Id: OperatingSystem.h,v 1.3 2006/02/07 20:31:39 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -32,7 +32,7 @@
 /// other methods allow comparisations to check if it is a certain
 /// well known operating system or platform or not.
 
-class MOperatingSystem : public CObject
+class AFX_EXT_CLASS MOperatingSystem : public CObject
 {
   public:
     /// Standard constructor.
@@ -47,13 +47,31 @@ class MOperatingSystem : public CObject
     ///         returns FALSE if there was an error while retrieving the data.
     BOOL IsValid() const;
 
-    /// Compares to operating system to Windows NT 4.0.
+    /// Compares the operating system to Windows NT 4.0.
     ///
     /// \return Returns TRUE if it is a Windows NT 4.0 system, else FALSE.
     BOOL IsWindowsNT40() const;
 
     DWORD PlatformID() const;
     DWORD MajorVersion() const;
+
+    BOOL IsPlatformWindows();
+    BOOL IsPlatformNT();
+
+    BOOL IsWindows3x();
+    BOOL IsWindows95();
+    BOOL IsWindows98();
+    BOOL IsWindowsME();
+    BOOL IsWindows9x();
+    BOOL IsWindowsNT40();
+    BOOL IsWindowsNT351();
+    BOOL IsWindowsNT();
+    BOOL IsWindows2000();
+    BOOL IsWindowsXP();
+    BOOL IsWindowsDotNet();
+
+    CString GetOperatingSystemName();
+    CString GetOperatingSystemVersion();
 
   protected:
     OSVERSIONINFO m_os_version_info;             ///< Internal data retrieved from Windows.

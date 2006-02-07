@@ -43,7 +43,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;C:\Dokumente und Einstellungen\Albrecht\Eigene Dateien\Visual Studio 2005\Projects\Miraledon&quot;"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)&quot;"
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_AFXEXT"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -126,7 +126,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="&quot;C:\Dokumente und Einstellungen\Albrecht\Eigene Dateien\Visual Studio 2005\Projects\Miraledon&quot;"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)&quot;"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_AFXEXT"
 				RuntimeLibrary="2"
 				UsePrecompiledHeader="2"
@@ -200,6 +200,10 @@
 			</File>
 			<File
 				RelativePath=".\Miraledon\HyperlinkCtrl.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Miraledon\KeyboardLights.cpp"
 				>
 			</File>
 			<File
@@ -298,6 +302,10 @@
 			</File>
 			<File
 				RelativePath=".\Miraledon\HyperlinkCtrl.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Miraledon\KeyboardLights.h"
 				>
 			</File>
 			<File

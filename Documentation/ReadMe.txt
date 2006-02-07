@@ -11,14 +11,17 @@ their article writers to put their sources below a certain license.
 So many authors only tell "it's free" or use no real license.
 Some classes in this library are from such "free" sources.
 
-To use these classes just add the needed and all depending classes
+To use these classes you could copy the needed classes into your
+project. Or you can just add the needed and all depending classes
 together with their header files to your project. Then add the path
 to the right headers directory as additional include directory.
 This is the simplest, but not the best way.
 
-However, you can also build an own Miraledon DLL. This is a true
-MFC extension DLL and only works together with MFC applications.
-Because of the living sources which may change from time to time,
-I would suggest to rename the DLL (just add a version number)
-so that your application will work even if the system provides
-a newer file.
+The suggested way is the building of an own Miraledon DLL. This is a
+true MFC extension DLL and only works together with MFC applications.
+Because of the "living" sources which may change from time to time,
+I would suggest to rename the DLL (just add a version number and
+the application name or your initials) so that your application will
+work even if the system provides a newer file. Do not use clean
+version numbers like <number>.<number>. These are for official
+versions of the Miraledon DLL.

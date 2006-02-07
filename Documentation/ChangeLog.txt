@@ -1,18 +1,20 @@
-$Id: ChangeLog.txt,v 1.3 2006/02/07 15:23:53 gerrit-albrecht Exp $
+$Id: ChangeLog.txt,v 1.4 2006/02/07 20:31:39 gerrit-albrecht Exp $
 
 2005-02-07  Gerrit M. Albrecht  <gerrit-albrecht@users.berlios.de>
 
 	* New directory structure. Removed the src directory and placed
 	  the source file directly into Miraledon. So I'm able to use
-	  includes like <Miraledon/Splitter.h> instead of <MiraSplitter.h>.
+	  includes like <Miraledon/Splitter.h> instead of "MiraSplitter.h".
 	* Wanted to add a Miraledon namespace to be able to rename e.g.
 	  CMiraDialog to Miraledon::Dialog, but it failed due to some
-	  MFC macros which didn't liked namespaces.
+	  MFC macros which didn't liked namespaces. So e..g. CMiraDialog
+	  is now MDialog.
+	* The normal way to use Miraledon is the Miraledon DLL.
 
 2005-02-06  Gerrit M. Albrecht  <gerrit-albrecht@users.berlios.de>
 
 	* Bugfix: Removed some unnecessary flickering of the splitter panes
-      and it's tracker bar.
+	  and it's tracker bar.
 
 2005-01-23  Gerrit M. Albrecht  <gerrit-albrecht@users.berlios.de>
 
