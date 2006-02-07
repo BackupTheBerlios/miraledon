@@ -4,12 +4,17 @@ Miraledon
 
 Miraledon is a class library which provides centrally
 maintained MFC classes which may freely be used in own projects.
-The license is the LGPL.
+
+The license is the LGPL. Most classes have it's origin on websites
+like CodeProject.com or CodeGuru.com. These sites do not force
+their article writers to put their sources below a certain license.
+So many authors only tell "it's free" or use no real license.
+Some classes in this library are from such "free" sources.
 
 To use these classes just add the needed and all depending classes
 together with their header files to your project. Then add the path
 to the right headers directory as additional include directory.
-This is the simplest way.
+This is the simplest, but not the best way.
 
 However, you can also build an own Miraledon DLL. This is a true
 MFC extension DLL and only works together with MFC applications.
