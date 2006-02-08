@@ -112,6 +112,25 @@ BEGIN
     CONTROL         "",IDC_ANIMATION,"SysAnimate32",WS_BORDER | WS_TABSTOP,12,12,276,66
 END
 
+IDD_MIRA_OPTIONS_DIALOG DIALOGEX 0, 0, 328, 244
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,271,223,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,213,223,50,14
+    CONTROL         "",IDC_LIST,"SysListView32",LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,126,20,107,168
+    LISTBOX         IDC_LISTBOX,31,33,77,151,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_MIRA_SPLASH_DIALOG DIALOGEX 0, 0, 267, 194
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Splash ..."
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&Okay",IDOK,109,173,50,14
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -128,8 +147,63 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 168
     END
+
+    IDD_MIRA_OPTIONS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 321
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 237
+    END
+
+    IDD_MIRA_SPLASH_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 187
+    END
 END
 #endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_LED_STATUS          BITMAP                  "res\\led_status.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_CONN_CONNECTED      ICON                    "res\\conn_disconnected.ico"
+IDI_CONN_DISCONNECTED   ICON                    "res\\conn_connected.ico"
+IDI_LED_GRAY            ICON                    "res\\led_gray.ico"
+IDI_LED_GREEN           ICON                    "res\\led_green.ico"
+IDI_LED_RED             ICON                    "res\\led_red.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_HAND                CURSOR                  "res\\hand.cur"
+IDC_NOT_ALLOWED         CURSOR                  "res\\not_allowed.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_MIRALEDON_HOMEPAGE  "http://miraledon.berlios.de/"
+END
 
 #endif    // German (Germany) resources
 /////////////////////////////////////////////////////////////////////////////

@@ -243,6 +243,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Miraledon\SliderCtrl.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Miraledon\Splitter.cpp"
 				>
 			</File>
@@ -341,6 +345,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Miraledon\SliderCtrl.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Miraledon\Splitter.h"
 				>
 			</File>
@@ -375,11 +383,43 @@
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
 			<File
+				RelativePath=".\res\conn_connected.ico"
+				>
+			</File>
+			<File
+				RelativePath=".\res\conn_disconnected.ico"
+				>
+			</File>
+			<File
+				RelativePath=".\res\hand.cur"
+				>
+			</File>
+			<File
+				RelativePath=".\res\led_gray.ico"
+				>
+			</File>
+			<File
+				RelativePath=".\res\led_green.ico"
+				>
+			</File>
+			<File
+				RelativePath=".\res\led_red.ico"
+				>
+			</File>
+			<File
+				RelativePath=".\res\led_status.bmp"
+				>
+			</File>
+			<File
 				RelativePath=".\Miraledon.rc"
 				>
 			</File>
 			<File
 				RelativePath=".\res\Miraledon.rc2"
+				>
+			</File>
+			<File
+				RelativePath=".\res\not_allowed.cur"
 				>
 			</File>
 		</Filter>
