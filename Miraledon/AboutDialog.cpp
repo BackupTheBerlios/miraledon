@@ -1,4 +1,4 @@
-// $Id: AboutDialog.cpp,v 1.1 2006/02/08 20:59:54 gerrit-albrecht Exp $
+// $Id: AboutDialog.cpp,v 1.2 2006/02/08 22:21:26 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -35,6 +35,7 @@ END_MESSAGE_MAP()
 MAboutDialog::MAboutDialog(unsigned int id)
  : CDialog(id)
 {
+  EnableActiveAccessibility();
 }
 
 void MAboutDialog::DoDataExchange(CDataExchange* pDX)
