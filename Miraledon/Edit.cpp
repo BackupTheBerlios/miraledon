@@ -1,4 +1,4 @@
-// $Id: AboutDialog.h,v 1.2 2006/02/08 21:29:20 gerrit-albrecht Exp $
+// $Id: Edit.cpp,v 1.1 2006/02/08 21:29:20 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -18,25 +18,25 @@
 // License along with this library; if not, write to the Free Software
 // Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
-/// \file AboutDialog.h
+/// \file Edit.h
 /// \author Gerrit M. Albrecht
-/// \brief Contains the declaration of the MAboutDialog class.
+/// \brief Contains the definition of the MEdit class.
 
-#pragma once
+#include "StdAfx.h"
+#include "Edit.h"
 
-/// \brief This is a better CAboutDialog.
-///
-/// This is the standard implementation with some prepositioned controls.
+IMPLEMENT_DYNAMIC(MEdit, CEdit)
 
-class AFX_EXT_CLASS MAboutDialog : public CDialog
+BEGIN_MESSAGE_MAP(MEdit, CEdit)
+END_MESSAGE_MAP()
+
+MEdit::MEdit()
 {
-  public:
-    /// Standard constructor.
-    MAboutDialog(unsigned int id);
+#ifndef _WIN32_WCE
+  EnableActiveAccessibility();
+#endif
+}
 
-  protected:
-    virtual void DoDataExchange(CDataExchange* pDX);
-
-  protected:
-    DECLARE_MESSAGE_MAP()
-};
+MEdit::~MEdit()
+{
+}

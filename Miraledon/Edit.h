@@ -1,4 +1,4 @@
-// $Id: SizeGrip.h,v 1.4 2006/02/08 21:29:20 gerrit-albrecht Exp $
+// $Id: Edit.h,v 1.1 2006/02/08 21:29:20 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -18,38 +18,27 @@
 // License along with this library; if not, write to the Free Software
 // Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
-/// \file SizeGrip.h
+/// \file Edit.h
 /// \author Gerrit M. Albrecht
-/// \brief Contains the declaration of the MSizeGrip class.
+/// \brief Contains the declaration of the MEdit class.
 
 #pragma once
 
-/// \brief A grip to resize dialogs or windows.
+/// \brief This is a better CEdit.
 ///
-/// This class is a grip for resiable elements. If you implement a resizable dialog
-/// you have 3 possibilities. First you may paint the grip using for example
-/// dc.DrawFrameControl(rc, DFC_SCROLL, DFCS_SCROLLSIZEGRIP);
-/// in OnPaint(). However this method overpaints dialog elements. You need to redraw
-/// the dialog (flickering) or better you use a separate control for such situations.
-/// One may use a status bar control (simple window with a SBS_SIZEGRIP set. I derive
-/// from a scrollbar.
+/// This is an enhanced CEdit which provides e.g. numeric input.
 
-class AFX_EXT_CLASS MSizeGrip : public CScrollBar
+class AFX_EXT_CLASS MEdit : public CEdit
 {
-  DECLARE_DYNAMIC(MSizeGrip)
+  DECLARE_DYNAMIC(MEdit)
 
   public:
     /// Standard constructor.
-    MSizeGrip();
+    MEdit();
 
     /// Destructor.
-	virtual ~MSizeGrip();
-
-    BOOL IsRTL() const;
+	virtual ~MEdit();
 
   protected:
     DECLARE_MESSAGE_MAP()
-
-  public:
-    afx_msg LRESULT OnNcHitTest(CPoint point);
 };
