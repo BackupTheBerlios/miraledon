@@ -1,4 +1,4 @@
-$Id: ChangeLog.txt,v 1.4 2006/02/07 20:31:39 gerrit-albrecht Exp $
+$Id: ChangeLog.txt,v 1.5 2006/02/08 07:56:13 gerrit-albrecht Exp $
 
 2005-02-07  Gerrit M. Albrecht  <gerrit-albrecht@users.berlios.de>
 
@@ -7,8 +7,8 @@ $Id: ChangeLog.txt,v 1.4 2006/02/07 20:31:39 gerrit-albrecht Exp $
 	  includes like <Miraledon/Splitter.h> instead of "MiraSplitter.h".
 	* Wanted to add a Miraledon namespace to be able to rename e.g.
 	  CMiraDialog to Miraledon::Dialog, but it failed due to some
-	  MFC macros which didn't liked namespaces. So e..g. CMiraDialog
-	  is now MDialog.
+	  MFC macros which didn't liked namespaces.
+	  For example CMiraDialog has now the name MDialog.
 	* The normal way to use Miraledon is the Miraledon DLL.
 
 2005-02-06  Gerrit M. Albrecht  <gerrit-albrecht@users.berlios.de>
