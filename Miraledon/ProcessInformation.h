@@ -1,4 +1,4 @@
-// $Id: ProcessInformation.h,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
+// $Id: ProcessInformation.h,v 1.3 2006/02/08 12:53:45 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -38,7 +38,7 @@ BOOL CALLBACK MyProcessEnumerator(DWORD dwPID, WORD wTask, LPCTSTR szProcess, LP
 /// enumerate the processes calling a callback function once for each process. The callback function
 /// has to be defined by the user.
 
-class MProcessInformation
+class AFX_EXT_CLASS MProcessInformation
 {
   public:
     /// Standard constructor.

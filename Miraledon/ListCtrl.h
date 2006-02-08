@@ -1,4 +1,4 @@
-// $Id: ListCtrl.h,v 1.3 2006/02/07 16:07:49 gerrit-albrecht Exp $
+// $Id: ListCtrl.h,v 1.4 2006/02/08 12:53:45 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -29,7 +29,7 @@
 /// This class is able to autosize it's columns.
 /// More features will follow.
 
-class MListCtrl : public CListCtrl
+class AFX_EXT_CLASS MListCtrl : public CListCtrl
 {
   DECLARE_DYNAMIC(MListCtrl)
 

@@ -1,4 +1,4 @@
-// $Id: TrayIcon.h,v 1.3 2006/02/07 16:07:49 gerrit-albrecht Exp $
+// $Id: TrayIcon.h,v 1.4 2006/02/08 12:53:46 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -29,7 +29,7 @@
 /// This class manages a single tray bar icon. You have to add an instance
 /// to your application to use it.
 
-class MTrayIcon : public CCmdTarget
+class AFX_EXT_CLASS MTrayIcon : public CCmdTarget
 {
   DECLARE_DYNAMIC(MTrayIcon)
 

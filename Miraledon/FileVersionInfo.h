@@ -1,4 +1,4 @@
-// $Id: FileVersionInfo.h,v 1.3 2006/02/07 16:07:49 gerrit-albrecht Exp $
+// $Id: FileVersionInfo.h,v 1.4 2006/02/08 12:53:45 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -33,7 +33,7 @@
 /// information. Upon construction, this class retrieves it's data using windows API calls
 /// and stores everything for later retrieval.
 
-class MFileVersionInfo
+class AFX_EXT_CLASS MFileVersionInfo
 {
   public:
     /// Standard constructor.

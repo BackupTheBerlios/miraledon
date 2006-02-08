@@ -1,4 +1,4 @@
-// $Id: SerialPort.h,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
+// $Id: SerialPort.h,v 1.3 2006/02/08 12:53:46 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -30,7 +30,7 @@
 /// the user may read and write from or to the port and close it again. The class protects the
 /// port, catches errors and provides a better user interface than the standard windows API.
 
-class MSerialPort : public CObject
+class AFX_EXT_CLASS MSerialPort : public CObject
 {
   public:
     /// Standard constructor.

@@ -1,4 +1,4 @@
-// $Id: SizeGrip.h,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
+// $Id: SizeGrip.h,v 1.3 2006/02/08 12:53:46 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -34,7 +34,7 @@
 /// One may use a status bar control (simple window with a SBS_SIZEGRIP set. I derive
 /// from a scrollbar.
 
-class MSizeGrip : public CScrollBar
+class AFX_EXT_CLASS MSizeGrip : public CScrollBar
 {
   DECLARE_DYNAMIC(MSizeGrip)
 

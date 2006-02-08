@@ -1,4 +1,4 @@
-// $Id: Thread.h,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
+// $Id: Thread.h,v 1.3 2006/02/08 12:53:46 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -29,7 +29,7 @@
 /// This class manages a single thread. You have to derive from this class and override the
 /// needed virtual methods.
 
-class MThread
+class AFX_EXT_CLASS MThread
 {
   public:
     MThread();

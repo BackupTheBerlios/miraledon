@@ -1,4 +1,4 @@
-// $Id: Dialog.h,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
+// $Id: Dialog.h,v 1.3 2006/02/08 12:53:45 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -31,7 +31,7 @@
 /// This class is able to show a size grip an it's corner.
 /// More features will follow.
 
-class MDialog : public CDialog
+class AFX_EXT_CLASS MDialog : public CDialog
 {
   DECLARE_DYNAMIC(MDialog)
 

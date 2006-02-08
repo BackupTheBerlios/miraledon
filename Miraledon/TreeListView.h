@@ -1,4 +1,4 @@
-// $Id: TreeListView.h,v 1.3 2006/02/07 16:07:49 gerrit-albrecht Exp $
+// $Id: TreeListView.h,v 1.4 2006/02/08 12:53:46 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -20,7 +20,7 @@
 
 #pragma once
 
-class MTreeListView : public CCtrlView
+class AFX_EXT_CLASS MTreeListView : public CCtrlView
 {
   DECLARE_DYNCREATE(MTreeListView)
 

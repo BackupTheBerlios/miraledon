@@ -1,4 +1,4 @@
-// $Id: TreeListCtrl.h,v 1.2 2006/02/07 15:54:19 gerrit-albrecht Exp $
+// $Id: TreeListCtrl.h,v 1.3 2006/02/08 12:53:46 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -20,7 +20,7 @@
 
 #pragma once
 
-class MTreeListCtrl : public CTreeCtrl
+class AFX_EXT_CLASS MTreeListCtrl : public CTreeCtrl
 {
   DECLARE_DYNAMIC(MTreeListCtrl)
 

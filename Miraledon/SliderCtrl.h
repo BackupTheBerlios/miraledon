@@ -1,4 +1,4 @@
-// $Id: SliderCtrl.h,v 1.1 2006/02/08 09:20:56 gerrit-albrecht Exp $
+// $Id: SliderCtrl.h,v 1.2 2006/02/08 12:53:46 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -28,7 +28,7 @@
 ///
 /// MSliderCtrl is an extension for the MFC CSliderCtrl class.
 
-class MSliderCtrl : public CSliderCtrl
+class AFX_EXT_CLASS MSliderCtrl : public CSliderCtrl
 {
   DECLARE_DYNAMIC(MSliderCtrl)
 

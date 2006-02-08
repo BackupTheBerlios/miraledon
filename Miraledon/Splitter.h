@@ -1,4 +1,4 @@
-// $Id: Splitter.h,v 1.2 2006/02/07 15:54:19 gerrit-albrecht Exp $
+// $Id: Splitter.h,v 1.3 2006/02/08 12:53:46 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -31,7 +31,7 @@
 /// while dragging the tracker bar with the mouse. Unfortunately
 /// it's flickering something so this feature can be disabled.
 
-class MSplitter : public CSplitterWnd
+class AFX_EXT_CLASS MSplitter : public CSplitterWnd
 {
   public:
     /// Standard constructor.
