@@ -14,3 +14,5 @@ Irek Zielinski
 Paul DiLascia
   1999 Microsoft Systems Journal, Tray icon demonstration.
 
+Keith Rule
+  The whole MMemDC class is Copyright 1996-2002 by Keith Rule.
