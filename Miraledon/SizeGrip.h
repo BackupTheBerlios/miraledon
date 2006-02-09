@@ -1,4 +1,4 @@
-// $Id: SizeGrip.h,v 1.4 2006/02/08 21:29:20 gerrit-albrecht Exp $
+// $Id: SizeGrip.h,v 1.5 2006/02/09 13:03:28 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -31,8 +31,9 @@
 /// dc.DrawFrameControl(rc, DFC_SCROLL, DFCS_SCROLLSIZEGRIP);
 /// in OnPaint(). However this method overpaints dialog elements. You need to redraw
 /// the dialog (flickering) or better you use a separate control for such situations.
-/// One may use a status bar control (simple window with a SBS_SIZEGRIP set. I derive
-/// from a scrollbar.
+/// This allows the window to use clipping to determine the area which needs to
+/// get updated. Third possible method is the use of a status bar control (simple window
+/// with a SBS_SIZEGRIP set). I derive from a scrollbar.
 
 class AFX_EXT_CLASS MSizeGrip : public CScrollBar
 {
