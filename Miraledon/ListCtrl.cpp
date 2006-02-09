@@ -1,4 +1,4 @@
-// $Id: ListCtrl.cpp,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
+// $Id: ListCtrl.cpp,v 1.3 2006/02/09 13:15:55 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -93,7 +93,7 @@ void MListCtrl::AutoSizeColumns()
   Invalidate();
 }
 
-BOOL MListCtrl::AddColumn(LPCTSTR strItem,int nItem,int nSubItem,int nMask,int nFmt)
+BOOL MListCtrl::AddColumn(LPCTSTR strItem, int nItem, int nSubItem, int nMask, int nFmt)
 {
 	LV_COLUMN lvc;
 	lvc.mask = nMask;

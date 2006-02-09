@@ -1,4 +1,4 @@
-// $Id: ListCtrl.h,v 1.4 2006/02/08 12:53:45 gerrit-albrecht Exp $
+// $Id: ListCtrl.h,v 1.5 2006/02/09 13:15:55 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -41,11 +41,11 @@ class AFX_EXT_CLASS MListCtrl : public CListCtrl
     void AutoSizeColumns();
     int GetColumnCount() const;
 
-	BOOL AddColumn(LPCTSTR strItem,int nItem,int nSubItem = -1,
+	BOOL AddColumn(LPCTSTR strItem, int nItem, int nSubItem = -1,
                    int nMask = LVCF_FMT | LVCF_WIDTH | LVCF_TEXT | LVCF_SUBITEM,
                    int nFmt = LVCFMT_LEFT);
-	BOOL AddItem(int nItem,int nSubItem,LPCTSTR strItem,int nImageIndex = -1);
-	BOOL ReplaceItem(int nItem,int nSubItem,LPCTSTR strItem,int nImageIndex = -1);
+	BOOL AddItem(int nItem, int nSubItem, LPCTSTR strItem, int nImageIndex = -1);
+	BOOL ReplaceItem(int nItem, int nSubItem, LPCTSTR strItem, int nImageIndex = -1);
 
   protected:
     DECLARE_MESSAGE_MAP()

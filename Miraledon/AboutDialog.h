@@ -1,4 +1,4 @@
-// $Id: AboutDialog.h,v 1.2 2006/02/08 21:29:20 gerrit-albrecht Exp $
+// $Id: AboutDialog.h,v 1.3 2006/02/09 13:15:55 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -27,6 +27,10 @@
 /// \brief This is a better CAboutDialog.
 ///
 /// This is the standard implementation with some prepositioned controls.
+/// This allows you to add a simple about dialog to your programs without
+/// inserting an extra class. Even the dialog resource is optional. This
+/// dialog is able to retrieve most of its information from the version
+/// info block of the executable.
 
 class AFX_EXT_CLASS MAboutDialog : public CDialog
 {
