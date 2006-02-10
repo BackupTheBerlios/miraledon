@@ -1,4 +1,4 @@
-// $Id: SerialPort.cpp,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
+// $Id: SerialPort.cpp,v 1.3 2006/02/10 15:49:56 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -24,6 +24,7 @@
 
 #include "StdAfx.h"
 #include "SerialPort.h"
+#include "OperatingSystem.h"
 
 MSerialPort::MSerialPort()
 {
@@ -124,4 +125,94 @@ void MSerialPort::ClosePort ()
 CString &MSerialPort::GetPortName ()
 {
   return m_name;
+}
+
+CUIntArray &MSerialPort::GetPortList()
+{
+  MOperatingSystem os;
+  DWORD            error;
+
+  m_ports.RemoveAll();
+
+  if (! os.IsValid())
+    return m_ports;
+
+  if (os.IsPlatformNT()) {                                 // We are using the QueryDosDevice API.
+    TCHAR devices[65535];
+    DWORD chars;
+
+    chars = QueryDosDevice(NULL, devices, 65535);
+    error = GetLastError();
+
+#if 0
+    if (chars == 0) {
+      LPVOID lpMsgBuf;
+      LPVOID lpDisplayBuf;
+
+      TRACE(_T("QueryDosDevice failed, GetLastError: %d\n"), GetLastError());
+
+      if (error != 0) {
+        FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM, NULL, error,
+                      MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), (LPTSTR) &lpMsgBuf, 0, NULL);
+
+        lpDisplayBuf = LocalAlloc(LMEM_ZEROINIT, strlen(lpMsgBuf)+strlen(lpszFunction)+40);
+        wsprintf(lpDisplayBuf, _T("%s failed with error %d: %s\n"), lpszFunction, dw, lpMsgBuf);
+        TRACE(lpDisplayBuf);
+
+        LocalFree(lpMsgBuf);
+        LocalFree(lpDisplayBuf);
+      }
+    }
+#endif
+
+    if (error == ERROR_INSUFFICIENT_BUFFER) {
+      TRACE("ERROR_INSUFFICIENT_BUFFER\n");
+    }
+
+    if (chars > 0) {
+      int i = 0;
+
+      while (true) {
+        TCHAR *currentDevice = &devices[i];                // Get a device from the string.
+
+        size_t len = _tcslen(currentDevice);
+        if (len > 3 && _tcsnicmp(currentDevice, _T("COM"), 3) == 0)  // Select the port number.
+          m_ports.Add(_ttoi(&currentDevice[3]));
+
+        while (currentDevice[i] != _T('\0'))               // Find next NULL character.
+          i++;
+        i++;                                               // This is the next string.
+
+        if (currentDevice[i] != _T('\0'))                  // List is double-NULL terminated.
+          break;                                           // Found the end.
+      }
+    }
+  }
+  else if (os.IsPlatformWindows()) {                       // We try to open each port.
+    for (unsigned int i=1; i<256; i++) {                   // Up to 255 COM ports are supported.
+      CString name;
+      bool    success = false;
+      HANDLE  port;
+
+      name.Format(_T("\\\\.\\COM%d"), i);                  // Need the raw device name.
+
+      port = CreateFile(name, GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, 0, 0);
+      if (port == INVALID_HANDLE_VALUE) {
+        error = GetLastError();
+
+        if (error == ERROR_ACCESS_DENIED || error == ERROR_GEN_FAILURE)
+          success = true;
+      }
+      else {
+        success = true;
+
+        CloseHandle(port);
+      }
+
+      if (success)
+        m_ports.Add(i);
+    }
+  }
+
+  return m_ports;
 }

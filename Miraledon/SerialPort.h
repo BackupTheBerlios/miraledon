@@ -1,4 +1,4 @@
-// $Id: SerialPort.h,v 1.3 2006/02/08 12:53:46 gerrit-albrecht Exp $
+// $Id: SerialPort.h,v 1.4 2006/02/10 15:49:56 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -61,9 +61,15 @@ class AFX_EXT_CLASS MSerialPort : public CObject
     /// Returns a handle to the selected port name.
     ///
     /// \return Returns a reference to the string containing the port name.
-    CString &GetPortName ();
+    CString &GetPortName();
+
+    /// Enumerates all serial ports and creates a list with their numbers.
+    ///
+    /// \return Returns a list with all found port numbers.
+    CUIntArray &MSerialPort::GetPortList();
 
   protected:
+    CUIntArray        m_ports;                             ///< Port list with the numbers of all installed serial ports.
     CRITICAL_SECTION  m_lock;                              ///< Protects our buffer during data transfers.
     HANDLE            m_handle;                            ///< File handle for the serial port.
     DCB               m_dcb;                               ///< Data Communication Block (contains speed, parity, ..).
