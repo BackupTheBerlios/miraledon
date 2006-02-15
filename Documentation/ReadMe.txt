@@ -2,8 +2,11 @@ Miraledon
 
 (c) 1996-2006 Gerrit M. Albrecht
 
-Miraledon is a class library which provides centrally
-maintained MFC classes which may freely be used in own projects.
+Miraledon is a class library which provides centrally maintained,
+free MFC classes which may be used without restrictions in own projects.
+All classes are designed to be as fast as possible. Every additions or
+enhancements which change the standard look and feel are optional and
+have to be explicitly switched on.
 
 The license is the LGPL. Most classes have it's origin on websites
 like CodeProject.com or CodeGuru.com. These sites do not force
