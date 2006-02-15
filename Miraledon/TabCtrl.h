@@ -1,4 +1,4 @@
-// $Id: TabCtrl.h,v 1.1 2006/02/15 10:39:49 gerrit-albrecht Exp $
+// $Id: TabCtrl.h,v 1.2 2006/02/15 12:56:59 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -36,10 +36,21 @@ class AFX_EXT_CLASS MTabCtrl : public CTabCtrl
 
   public:
     MTabCtrl();
+
     virtual ~MTabCtrl();
+
+    void AddTab (const CString &name);
+
+    void DeleteTab (const unsigned int pos = 0);
+
+    /// Use this method to show the needed and hide all unneeded controls.
+    virtual void TabActivated (unsigned int tab);
 
   protected:
     bool m_enable_close_button;
+
+  public:
+    afx_msg void OnTcnSelchange(NMHDR *pNMHDR, LRESULT *pResult);
 
   protected:
     DECLARE_MESSAGE_MAP()

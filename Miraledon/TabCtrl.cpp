@@ -1,4 +1,4 @@
-// $Id: TabCtrl.cpp,v 1.1 2006/02/15 10:39:49 gerrit-albrecht Exp $
+// $Id: TabCtrl.cpp,v 1.2 2006/02/15 12:56:59 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -28,6 +28,7 @@
 IMPLEMENT_DYNAMIC(MTabCtrl, CTabCtrl)
 
 BEGIN_MESSAGE_MAP(MTabCtrl, CTabCtrl)
+    ON_NOTIFY_REFLECT(TCN_SELCHANGE, &MTabCtrl::OnTcnSelchange)
 END_MESSAGE_MAP()
 
 MTabCtrl::MTabCtrl()
@@ -39,4 +40,40 @@ MTabCtrl::MTabCtrl()
 
 MTabCtrl::~MTabCtrl()
 {
+}
+
+void MTabCtrl::AddTab (const CString &name)
+{
+  TCITEM tci;
+  CRect size;
+
+  tci.mask = TCIF_TEXT;
+  tci.pszText = T2W((LPTSTR)(LPCTSTR) name);
+
+  InsertItem(GetItemCount(), &tci);
+
+  GetClientRect(&size);
+  AdjustRect(FALSE, &size);
+}
+
+void MTabCtrl::DeleteTab (const unsigned int pos /* = 0 */)
+{
+  DeleteItem(pos);
+}
+
+void MTabCtrl::TabActivated (unsigned int tab)
+{
+}
+
+void MTabCtrl::OnTcnSelchange(NMHDR *pNMHDR, LRESULT *pResult)
+{
+  int sel = GetCurSel();
+
+  UNUSED_ALWAYS(pNMHDR);
+
+  TRACE("MTabCtrl::OnTcnSelchange: sel=%d\n", sel);
+
+  TabActivated(sel);
+
+  *pResult = 0;
 }

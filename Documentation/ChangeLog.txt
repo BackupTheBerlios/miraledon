@@ -1,4 +1,9 @@
-$Id: ChangeLog.txt,v 1.5 2006/02/08 07:56:13 gerrit-albrecht Exp $
+$Id: ChangeLog.txt,v 1.6 2006/02/15 12:56:59 gerrit-albrecht Exp $
+
+2005-02-15  Gerrit M. Albrecht  <gerrit-albrecht@users.berlios.de>
+
+	* Added a tab control class. I will extend it sometime. I already have
+	  two projects using (different) extended versions and I hate this.
 
 2005-02-07  Gerrit M. Albrecht  <gerrit-albrecht@users.berlios.de>
 

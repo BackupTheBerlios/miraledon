@@ -279,6 +279,10 @@
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath=".\Miraledon\TabCtrl.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Miraledon\Thread.cpp"
 				>
 			</File>
@@ -370,6 +374,10 @@
 			</File>
 			<File
 				RelativePath=".\StdAfx.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Miraledon\TabCtrl.h"
 				>
 			</File>
 			<File
