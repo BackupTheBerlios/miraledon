@@ -1,4 +1,4 @@
-// $Id: ListCtrl.cpp,v 1.3 2006/02/09 13:15:55 gerrit-albrecht Exp $
+// $Id: ListCtrl.cpp,v 1.4 2006/02/16 15:16:59 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -95,17 +95,18 @@ void MListCtrl::AutoSizeColumns()
 
 BOOL MListCtrl::AddColumn(LPCTSTR strItem, int nItem, int nSubItem, int nMask, int nFmt)
 {
-	LV_COLUMN lvc;
-	lvc.mask = nMask;
-	lvc.fmt = nFmt;
-	lvc.pszText = (LPTSTR) strItem;
-	lvc.cx = GetStringWidth(lvc.pszText) + 15;
+  LV_COLUMN lvc;
+
+  lvc.mask = nMask;
+  lvc.fmt = nFmt;
+  lvc.pszText = (LPTSTR) strItem;
+  lvc.cx = GetStringWidth(lvc.pszText) + 15;
 
   if (nMask & LVCF_SUBITEM) {
-		if(nSubItem != -1)
-			lvc.iSubItem = nSubItem;
-		else
-			lvc.iSubItem = nItem;
+    if (nSubItem != -1)
+      lvc.iSubItem = nSubItem;
+    else
+      lvc.iSubItem = nItem;
   }
 
   return InsertColumn(nItem,&lvc);
@@ -121,7 +122,7 @@ BOOL MListCtrl::AddItem(int nItem, int nSubItem, LPCTSTR strItem, int nImageInde
   item.pszText  = (LPTSTR) strItem;
 
   if (nImageIndex != -1) {
-    item.mask |= LVIF_IMAGE;
+    item.mask   |= LVIF_IMAGE;
     item.iImage |= LVIF_IMAGE;
   }
 
@@ -141,7 +142,7 @@ BOOL MListCtrl::ReplaceItem(int nItem, int nSubItem, LPCTSTR strItem, int nImage
   item.pszText  = (LPTSTR) strItem;
 
   if (nImageIndex != -1) {
-    item.mask |= LVIF_IMAGE;
+    item.mask   |= LVIF_IMAGE;
     item.iImage |= LVIF_IMAGE;
   }
 
