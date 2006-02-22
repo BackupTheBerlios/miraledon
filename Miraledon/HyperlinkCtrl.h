@@ -1,4 +1,4 @@
-// $Id: HyperlinkCtrl.h,v 1.3 2006/02/08 12:53:45 gerrit-albrecht Exp $
+// $Id: HyperlinkCtrl.h,v 1.4 2006/02/22 14:04:34 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -39,6 +39,27 @@ class AFX_EXT_CLASS MHyperlinkCtrl : public CStatic
 
    /// Destructor.
    virtual ~MHyperlinkCtrl();
+
+  protected:
+    void SetURL(CString url);
+    CString GetURL() const;
+
+    DWORD GetStyle() const;
+    void SetStyle();
+    BOOL ModifyStyle(DWORD remove, DWORD add, BOOL apply = TRUE);	
+
+    BOOL IsVisited() const;
+    void SetVisited(BOOL visited = TRUE);
+
+    void GotoURL(const CString url = _T("")) const;
+
+  protected:
+    CFont          m_font;
+    CString        m_url;
+	DWORD	       m_style;
+	BOOL           m_visited;
+    CToolTipCtrl   m_tooltip;
+    static HCURSOR m_cursor;
 
   protected:
     DECLARE_MESSAGE_MAP()

@@ -1,4 +1,4 @@
-// $Id: HyperlinkCtrl.cpp,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
+// $Id: HyperlinkCtrl.cpp,v 1.3 2006/02/22 14:04:34 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -38,5 +38,42 @@ MHyperlinkCtrl::MHyperlinkCtrl()
 }
 
 MHyperlinkCtrl::~MHyperlinkCtrl()
+{
+}
+
+void MHyperlinkCtrl::SetURL(CString url)
+{
+  m_url = url;
+}
+
+CString MHyperlinkCtrl::GetURL() const
+{
+  return m_url;
+}
+
+DWORD MHyperlinkCtrl::GetStyle() const
+{
+  return m_style;
+}
+
+void MHyperlinkCtrl::SetStyle()
+{
+}
+
+BOOL MHyperlinkCtrl::ModifyStyle(DWORD remove, DWORD add, BOOL apply = TRUE)
+{
+  return FALSE;
+}
+
+BOOL MHyperlinkCtrl::IsVisited() const
+{
+  return FALSE;
+}
+
+void MHyperlinkCtrl::SetVisited(BOOL visited = TRUE)
+{
+}
+
+void MHyperlinkCtrl::GotoURL(const CString url /* = _T("") */) const
 {
 }
