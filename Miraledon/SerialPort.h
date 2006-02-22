@@ -1,4 +1,4 @@
-// $Id: SerialPort.h,v 1.4 2006/02/10 15:49:56 gerrit-albrecht Exp $
+// $Id: SerialPort.h,v 1.5 2006/02/22 14:16:21 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -75,7 +75,7 @@ class AFX_EXT_CLASS MSerialPort : public CObject
     DCB               m_dcb;                               ///< Data Communication Block (contains speed, parity, ..).
     CString           m_name;                              ///< Name of the COM port, e.g. "COM1".
     COMMTIMEOUTS      m_timeouts;                          ///< Timeout values for reading and writing.
-    bool              m_is_open;
+    bool              m_is_open;                           ///< Opening the port was successful.
     BOOL              m_is_ready;
     char              m_buffer[128];
 };

@@ -1,4 +1,4 @@
-// $Id: TabCtrl.cpp,v 1.2 2006/02/15 12:56:59 gerrit-albrecht Exp $
+// $Id: TabCtrl.cpp,v 1.3 2006/02/22 14:16:22 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -36,13 +36,15 @@ MTabCtrl::MTabCtrl()
 #ifndef _WIN32_WCE
   EnableActiveAccessibility();
 #endif
+
+  m_use_close_button = false;
 }
 
 MTabCtrl::~MTabCtrl()
 {
 }
 
-void MTabCtrl::AddTab (const CString &name)
+void MTabCtrl::AddTab(const CString &name)
 {
   TCITEM tci;
   CRect size;
@@ -56,12 +58,19 @@ void MTabCtrl::AddTab (const CString &name)
   AdjustRect(FALSE, &size);
 }
 
-void MTabCtrl::DeleteTab (const unsigned int pos /* = 0 */)
+void MTabCtrl::DeleteTab(const unsigned int pos /* = 0 */)
 {
   DeleteItem(pos);
 }
 
-void MTabCtrl::TabActivated (unsigned int tab)
+void MTabCtrl::DisplayCloseButton(bool show /* = true */)
+{
+  //m_close_button.Create();
+
+  m_use_close_button = true;
+}
+
+void MTabCtrl::TabActivated(unsigned int tab)
 {
 }
 

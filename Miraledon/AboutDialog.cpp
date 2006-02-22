@@ -1,4 +1,4 @@
-// $Id: AboutDialog.cpp,v 1.2 2006/02/08 22:21:26 gerrit-albrecht Exp $
+// $Id: AboutDialog.cpp,v 1.3 2006/02/22 14:19:41 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -32,9 +32,15 @@
 BEGIN_MESSAGE_MAP(MAboutDialog, CDialog)
 END_MESSAGE_MAP()
 
-MAboutDialog::MAboutDialog(unsigned int id)
- : CDialog(id)
+MAboutDialog::MAboutDialog(unsigned int id /* = 0 */)
 {
+  if (id == 0) {                                           // Use the built in dialog resource.
+    TRACE("MAboutDialog::MAboutDialog: Error: TODO\n");
+
+  }
+
+  CDialog::CDialog(id);
+
   EnableActiveAccessibility();
 }
 
