@@ -1,4 +1,4 @@
-// $Id: FileVersionInfo.cpp,v 1.2 2006/02/07 15:37:02 gerrit-albrecht Exp $
+// $Id: FileVersionInfo.cpp,v 1.3 2006/02/22 11:19:15 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -60,6 +60,20 @@ BOOL MFileVersionInfo::Get(const CString &filename)
     Free();
     return FALSE;
   }
+
+  UINT   query_size;
+  DWORD *trans_table;
+
+  // Retrieve the first language and character-set identifier.
+
+  if (! ::VerQueryValue(m_version_info_data, _T("\\VarFileInfo\\Translation"),
+                        (void **)&trans_table, &query_size)) {
+    Free();
+    return FALSE;
+  }
+
+  // Swap the words to have lang-charset in the correct format.
+  m_lang_charset = MAKELONG(HIWORD(trans_table[0]), LOWORD(trans_table[0]));
 
   return TRUE;
 }
