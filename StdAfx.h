@@ -1,4 +1,4 @@
-// $Id: StdAfx.h,v 1.1 2006/02/07 14:13:41 gerrit-albrecht Exp $
+// $Id: StdAfx.h,v 1.2 2006/02/22 15:25:43 gerrit-albrecht Exp $
 //
 // Miraledon
 // Copyright (C) 2006 by Gerrit M. Albrecht
@@ -74,3 +74,5 @@
 #endif // _AFX_NO_AFXCMN_SUPPORT
 
 #include <afxsock.h>		// MFC socket extensions
+#include <afx.h>
+#include <afxdlgs.h>

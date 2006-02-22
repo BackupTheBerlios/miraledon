@@ -43,7 +43,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)&quot;; ..\Miraledon"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)&quot;; ..\Miraledon; ..\..\Miraledon"
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_AFXEXT"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -126,7 +126,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)&quot;; ..\Miraledon"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)&quot;; ..\Miraledon; ..\..\Miraledon"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_AFXEXT"
 				RuntimeLibrary="2"
 				UsePrecompiledHeader="2"
@@ -195,11 +195,27 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Miraledon\ColorButton.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Miraledon\ColorButtonDialog.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Miraledon\Diagram.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Miraledon\Dialog.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\Miraledon\Edit.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Miraledon\FileDialog.cpp"
 				>
 			</File>
 			<File
@@ -231,6 +247,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Miraledon\NumEdit.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Miraledon\OperatingSystem.cpp"
 				>
 			</File>
@@ -240,6 +260,10 @@
 			</File>
 			<File
 				RelativePath=".\Miraledon\ProgressDialog.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Miraledon\Registry.cpp"
 				>
 			</File>
 			<File
@@ -313,11 +337,27 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Miraledon\ColorButton.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Miraledon\ColorButtonDialog.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Miraledon\Diagram.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Miraledon\Dialog.h"
 				>
 			</File>
 			<File
 				RelativePath=".\Miraledon\Edit.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Miraledon\FileDialog.h"
 				>
 			</File>
 			<File
@@ -341,6 +381,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Miraledon\NumEdit.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Miraledon\OperatingSystem.h"
 				>
 			</File>
@@ -350,6 +394,10 @@
 			</File>
 			<File
 				RelativePath=".\Miraledon\ProgressDialog.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Miraledon\Registry.h"
 				>
 			</File>
 			<File

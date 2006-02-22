@@ -16,13 +16,13 @@
 #define IDC_LIST                        1004
 #define IDI_CONN_DISCONNECTED           1004
 #define IDC_LISTBOX                     1005
-#define IDC_HAND                        1005
+#define IDC_STD_HAND                    1005
 #define IDI_LED_GRAY                    1006
 #define IDD_MIRA_PROGRESS_DIALOG        1007
 #define IDI_LED_GREEN                   1007
 #define IDI_LED_RED                     1008
-#define IDC_CURSOR1                     1009
 #define IDC_NOT_ALLOWED                 1009
+#define IDD_MIRA_COLOR_BUTTON           1010
 
 // Next default values for new objects
 // 
@@ -31,6 +31,6 @@
 #define _APS_NEXT_RESOURCE_VALUE        1010
 #define _APS_NEXT_COMMAND_VALUE         32771
 #define _APS_NEXT_CONTROL_VALUE         1006
-#define _APS_NEXT_SYMED_VALUE           1008
+#define _APS_NEXT_SYMED_VALUE           1011
 #endif
 #endif

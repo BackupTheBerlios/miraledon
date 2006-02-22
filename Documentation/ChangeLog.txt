@@ -1,9 +1,10 @@
-$Id: ChangeLog.txt,v 1.7 2006/02/22 11:19:15 gerrit-albrecht Exp $
+$Id: ChangeLog.txt,v 1.8 2006/02/22 15:25:43 gerrit-albrecht Exp $
 
 2005-02-22  Gerrit M. Albrecht  <gerrit-albrecht@users.berlios.de>
 
 	* FileVersionInfo returned wrong data because of a missing
 	  resource language parameter.
+	* Added many new classes. Will fill them in the next days.
 
 2005-02-15  Gerrit M. Albrecht  <gerrit-albrecht@users.berlios.de>
 

@@ -1,4 +1,4 @@
-// $Id: MemDC.h,v 1.3 2006/02/08 12:53:45 gerrit-albrecht Exp $
+// $Id: MemDC.h,v 1.4 2006/02/22 15:24:39 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -27,7 +27,7 @@
 // This class was taken over from: http://www.codeproject.com/gdi/flickerfree.asp
 // I have added the LGPL license. Please grab the original code to get a version
 // which grants you more rights. I adapted the sources to the Miraledon structure,
-// all new bugs are introduced by me.
+// all new bugs are introduced by me. Gerrit.
 
 // Author: Keith Rule
 // Email:  keithr@europa.com

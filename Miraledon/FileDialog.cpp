@@ -1,4 +1,4 @@
-// $Id: HyperlinkCtrl.cpp,v 1.4 2006/02/22 15:24:39 gerrit-albrecht Exp $
+// $Id: FileDialog.cpp,v 1.1 2006/02/22 15:24:39 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -18,62 +18,27 @@
 // License along with this library; if not, write to the Free Software
 // Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
-/// \file HyperlinkCtrl.h
+/// \file FileDialog.h
 /// \author Gerrit M. Albrecht
-/// \brief Contains the definition of the MHyperlinkCtrl class.
+/// \brief Contains the definition of the MFileDialog class.
 
 #include "StdAfx.h"
-#include "HyperlinkCtrl.h"
+#include "FileDialog.h"
 
-IMPLEMENT_DYNAMIC(MHyperlinkCtrl, CStatic)
+IMPLEMENT_DYNAMIC(MFileDialog, CFileDialog)
 
-BEGIN_MESSAGE_MAP(MHyperlinkCtrl, CStatic)
+BEGIN_MESSAGE_MAP(MFileDialog, CFileDialog)
 END_MESSAGE_MAP()
 
-MHyperlinkCtrl::MHyperlinkCtrl()
+MFileDialog::MFileDialog(BOOL bOpenFileDialog, LPCTSTR lpszDefExt, LPCTSTR lpszFileName,
+                         DWORD dwFlags, LPCTSTR lpszFilter, CWnd* pParentWnd)
+ : CFileDialog(bOpenFileDialog, lpszDefExt, lpszFileName, dwFlags, lpszFilter, pParentWnd)
 {
 #ifndef _WIN32_WCE
   EnableActiveAccessibility();
 #endif
 }
 
-MHyperlinkCtrl::~MHyperlinkCtrl()
-{
-}
-
-void MHyperlinkCtrl::SetURL(CString url)
-{
-  m_url = url;
-}
-
-CString MHyperlinkCtrl::GetURL() const
-{
-  return m_url;
-}
-
-DWORD MHyperlinkCtrl::GetStyle() const
-{
-  return m_style;
-}
-
-void MHyperlinkCtrl::SetStyle()
-{
-}
-
-BOOL MHyperlinkCtrl::ModifyStyle(DWORD remove, DWORD add, BOOL apply /* = TRUE */)
-{
-  return FALSE;
-}
-
-BOOL MHyperlinkCtrl::IsVisited() const
-{
-  return FALSE;
-}
-
-void MHyperlinkCtrl::SetVisited(BOOL visited /* = TRUE */)
-{
-}
-
-void MHyperlinkCtrl::GotoURL(const CString url /* = _T("") */) const
+MFileDialog::~MFileDialog()
 {
 }
