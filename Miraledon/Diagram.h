@@ -1,4 +1,4 @@
-// $Id: Diagram.h,v 1.1 2006/02/22 15:24:39 gerrit-albrecht Exp $
+// $Id: Diagram.h,v 1.2 2006/02/23 12:38:00 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -36,6 +36,14 @@ class AFX_EXT_CLASS MDiagram : public CWnd
   public:
     MDiagram();
     virtual ~MDiagram();
+
+  protected:
+    double m_x_min;
+    double m_x_max;
+    double m_y_min;
+    double m_y_max;
+    bool   m_show_x_zero_line;
+    bool   m_show_y_zero_line;
 
   protected:
     DECLARE_MESSAGE_MAP()

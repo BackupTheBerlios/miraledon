@@ -1,4 +1,4 @@
-// $Id: AboutDialog.cpp,v 1.4 2006/02/23 12:37:59 gerrit-albrecht Exp $
+// $Id: CommandLine.cpp,v 1.1 2006/02/23 12:38:00 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -18,37 +18,22 @@
 // License along with this library; if not, write to the Free Software
 // Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
-/// \file AboutDialog.h
+/// \file CommandLine.h
 /// \author Gerrit M. Albrecht
-/// \brief Contains the definition of the MAboutDialog class.
+/// \brief Contains the definition of the MCommandLine class.
 
 #include "StdAfx.h"
-#include "AboutDialog.h"
+#include "CommandLine.h"
 
-#ifdef _DEBUG
-#define new DEBUG_NEW
-#endif
-
-BEGIN_MESSAGE_MAP(MAboutDialog, CDialog)
-END_MESSAGE_MAP()
-
-MAboutDialog::MAboutDialog(unsigned int id /* = 0 */)
-{
-  if (id == 0) {                                           // Use the built in dialog resource.
-    TRACE("MAboutDialog::MAboutDialog: Error: TODO\n");
-
-  }
-
-  CDialog::CDialog(id);
-
-  EnableActiveAccessibility();
-}
-
-MAboutDialog::~MAboutDialog()
+MCommandLine::MCommandLine()
 {
 }
 
-void MAboutDialog::DoDataExchange(CDataExchange* pDX)
+MCommandLine::~MCommandLine()
 {
-  CDialog::DoDataExchange(pDX);
+}
+
+int MCommandLine::Parse(int argc, char *argv[])
+{
+  return 0;
 }

@@ -1,4 +1,4 @@
-// $Id: NumEdit.cpp,v 1.1 2006/02/22 15:24:39 gerrit-albrecht Exp $
+// $Id: NumEdit.cpp,v 1.2 2006/02/23 12:38:00 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -35,8 +35,22 @@ MNumEdit::MNumEdit()
 #ifndef _WIN32_WCE
   EnableActiveAccessibility();
 #endif
+
+  m_prefix = _T("");
+  m_suffix = _T("");
+  m_value  = 0.0;
 }
 
 MNumEdit::~MNumEdit()
 {
+}
+
+double MNumEdit::GetValue() const
+{
+  return m_value;
+}
+
+void MNumEdit::SetValue(double value)
+{
+  m_value = value;
 }

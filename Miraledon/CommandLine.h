@@ -1,4 +1,4 @@
-// $Id: NumEdit.h,v 1.2 2006/02/23 12:38:00 gerrit-albrecht Exp $
+// $Id: CommandLine.h,v 1.1 2006/02/23 12:38:00 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -18,34 +18,38 @@
 // License along with this library; if not, write to the Free Software
 // Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
-/// \file NumEdit.h
+/// \file CommandLine.h
 /// \author Gerrit M. Albrecht
-/// \brief Contains the declaration of the MNumEdit class.
+/// \brief Contains the declaration of the MCommandLine class.
 
 #pragma once
 
-#include <Miraledon/Edit.h>
-
-/// \brief A edit for numeric values.
+/// \brief Class to access command line parameters.
 ///
-/// This edit control can verify numeric values.
+/// A MCommandLine object allows to use given command line parameters with
+/// simple methods.
 
-class AFX_EXT_CLASS MNumEdit : public MEdit
+class AFX_EXT_CLASS MCommandLine : public CObject
 {
-  DECLARE_DYNAMIC(MNumEdit)
-
   public:
-    MNumEdit();
-    virtual ~MNumEdit();
+    /// Standard constructor.
+    MCommandLine();
 
-    double GetValue() const;
-    void SetValue(double value);
+    /// Destructor.
+    virtual ~MCommandLine();
+
+    /// Parses the command line into and retrieves switches and arguments.
+    ///
+	/// \param argc is the argument count.
+    /// \param argv is the array of char pointers with the argument values.
+    /// \return  Returns the number of found switches.
+    int Parse(int argc, char *argv[]);
+
+    ///
+    bool HasSwitch(const char *text);
 
   protected:
-    CString m_prefix;
-    CString m_suffix;
-    double  m_value;
+    /// 
+    bool IsSwitch(const char *text);
 
-  protected:
-    DECLARE_MESSAGE_MAP()
 };

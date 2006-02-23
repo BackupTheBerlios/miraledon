@@ -1,4 +1,4 @@
-// $Id: AboutDialog.h,v 1.4 2006/02/22 14:19:41 gerrit-albrecht Exp $
+// $Id: AboutDialog.h,v 1.5 2006/02/23 12:38:00 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -37,6 +37,9 @@ class AFX_EXT_CLASS MAboutDialog : public CDialog
   public:
     /// Standard constructor.
     MAboutDialog(unsigned int id = 0);
+
+    /// Destructor.
+    virtual ~MAboutDialog();
 
   protected:
     virtual void DoDataExchange(CDataExchange* pDX);
