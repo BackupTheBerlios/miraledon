@@ -203,6 +203,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Miraledon\CommandLine.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Miraledon\Diagram.cpp"
 				>
 			</File>
@@ -342,6 +346,10 @@
 			</File>
 			<File
 				RelativePath=".\Miraledon\ColorButtonDialog.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Miraledon\CommandLine.h"
 				>
 			</File>
 			<File

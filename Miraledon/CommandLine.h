@@ -1,4 +1,4 @@
-// $Id: CommandLine.h,v 1.1 2006/02/23 12:38:00 gerrit-albrecht Exp $
+// $Id: CommandLine.h,v 1.2 2006/02/23 14:45:07 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -38,6 +38,10 @@ class AFX_EXT_CLASS MCommandLine : public CObject
     /// Destructor.
     virtual ~MCommandLine();
 
+    int SwitchCount() const;
+
+    void Clear();
+
     /// Parses the command line into and retrieves switches and arguments.
     ///
 	/// \param argc is the argument count.
@@ -52,4 +56,6 @@ class AFX_EXT_CLASS MCommandLine : public CObject
     /// 
     bool IsSwitch(const char *text);
 
+  protected:
+    CMapStringToOb m_command_line;                         ///< Maps a String to a CStringList.
 };

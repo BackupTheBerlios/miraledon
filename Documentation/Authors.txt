@@ -1,10 +1,10 @@
 The Miraledon classes are classes which I needed in most of my projects again and again. All the original classes are free to use for private and commercial purposes. Some classes are published without a common open source license, other classes are from developer magazines or homepages which published the sources. However, all originals are free and everybody can use them in his own projects.
 
-I have rebuild and redesigned all classes from ground up. First step was looking for similar, comparable classes using MSDN, several Internet sources (CodeGuru, CodeProject) and search engines (Google, Kooders). Every class is at least an enhanced mix from two or tree analog classes. So I was able to put the classes below the LGPL. This license is more restrictive as the original licenses are. So I'm refering to the originating URL so every person who needs a non-LGPL source is able to download the original. All changes made by me are below the LGPL.
+I have rebuild and redesigned all classes from ground up. First step was looking for similar, comparable classes using MSDN, several Internet sources (CodeGuru, CodeProject) and search engines (Google, Koders). Every class is (re)written be me and enhanced by features from other free classes. There is no unfree code in the library, because I needed to be able to put my classes below the LGPL. This license is more restrictive as some of the original licenses are. So I'm refering to the originating URL so every person who needs a non-LGPL source is able to download the original. All changes made by me are below the LGPL.
 
-Most bugs are introduced by me. If you find one, don't hesitate to ask me for a solution. The original sources are different to the Miraledon sources. However, you may try to look at the mentioned originals in case they are more up-to-date or use another way to implement a detail.
+Most bugs are introduced by me. If you find one, don't hesitate to ask me for a solution. The original sources are very different to the Miraledon sources. However, you may try to look at the mentioned originals in case they are more up-to-date or use another way to implement a detail.
 
-Bugfixes to existing MFC classes are inserted into special extension classes. Bugfixes are cut and pasted into my class because it's often not possible to reinvent or reimplement these ideas without creating the same source again. Every MFC extension class has the same name as the parent class, only with a M instead a C in front of the name. Such extension classes are fully backward compatible to the old ones. Additional features need to be activated explicitly using a special method.
+Bugfixes to existing MFC classes are inserted into special extension classes. Bugfixes are cut and pasted into my class because it's often not possible to reinvent or reimplement these ideas without creating the same source again. Every MFC extension class has the same name as the parent class, only with a M instead a C in front of the name. Such extension classes are fully backward compatible to the old ones. Additional features always need to be activated explicitly using a special method.
 
 Here are the authors of the sources I have merged into my classes. I want to thank them for publishing their work. It is often much better implemented and documented than in my classes. Thanks go to:
 
@@ -16,3 +16,6 @@ Paul DiLascia
 
 Keith Rule
   The whole MMemDC class is Copyright 1996-2002 by Keith Rule.
+
+Hans Dietrich
+  Code to enumerate fonts contained in the registry.
