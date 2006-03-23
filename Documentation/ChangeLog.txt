@@ -1,4 +1,8 @@
-$Id: ChangeLog.txt,v 1.8 2006/02/22 15:25:43 gerrit-albrecht Exp $
+$Id: ChangeLog.txt,v 1.9 2006/03/23 14:13:35 gerrit-albrecht Exp $
+
+2005-03-23  Gerrit M. Albrecht  <gerrit-albrecht@users.berlios.de>
+
+	* Worked on MCommandLine and introduced a MCommandLineOption class.
 
 2005-02-22  Gerrit M. Albrecht  <gerrit-albrecht@users.berlios.de>
 

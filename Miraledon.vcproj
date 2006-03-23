@@ -207,6 +207,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Miraledon\CommandLineOption.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Miraledon\Diagram.cpp"
 				>
 			</File>
@@ -350,6 +354,10 @@
 			</File>
 			<File
 				RelativePath=".\Miraledon\CommandLine.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Miraledon\CommandLineOption.h"
 				>
 			</File>
 			<File

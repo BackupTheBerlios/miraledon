@@ -1,4 +1,4 @@
-// $Id: KeyboardLights.h,v 1.2 2006/02/07 18:38:35 gerrit-albrecht Exp $
+// $Id: KeyboardLights.h,v 1.3 2006/03/23 14:08:39 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -40,16 +40,16 @@ class AFX_EXT_CLASS MKeyboardLights
     virtual ~MKeyboardLights();
 
   public:
-    void SetCapsLock(BOOL enable = TRUE);
-    BOOL GetCapsLock();
+    void SetCapsLock(bool enable = true);
+    bool GetCapsLock();
     void ToggleCapsLock();
 
-    void SetScrollLock(BOOL enable = TRUE);
-    BOOL GetScrollLock();
+    void SetScrollLock(bool enable = true);
+    bool GetScrollLock();
     void ToggleScrollLock();
 
-    void SetNumLock(BOOL enable = TRUE);
-    BOOL GetNumLock();
+    void SetNumLock(bool enable = true);
+    bool GetNumLock();
     void ToggleNumLock();
 
   protected:

@@ -1,4 +1,4 @@
-// $Id: CommandLine.h,v 1.2 2006/02/23 14:45:07 gerrit-albrecht Exp $
+// $Id: CommandLine.h,v 1.3 2006/03/23 14:08:39 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -24,6 +24,8 @@
 
 #pragma once
 
+#include "CommandLineOption.h"
+
 /// \brief Class to access command line parameters.
 ///
 /// A MCommandLine object allows to use given command line parameters with
@@ -38,24 +40,52 @@ class AFX_EXT_CLASS MCommandLine : public CObject
     /// Destructor.
     virtual ~MCommandLine();
 
-    int SwitchCount() const;
-
+    /// Removes all stored internal data about options and their values.
     void Clear();
 
-    /// Parses the command line into and retrieves switches and arguments.
+    /// Allows an application to provide standard options.
+    void RegisterOption(const MCommandLineOption &option);
+
+/*
+    /// \param shortName is an abbreviation for the options long name.
+    /// \param longName is the full name of an option.
+    void RegisterOption(const CString &shortName,
+                        const CString &longName     = _T(""),
+                        const CString &helpText     = _T(""),
+                        const CString &defaultValue = _T(""),
+                        bool required = false,
+                        bool toggles = false);
+
+    void GetValue(const CString &optionName, CString &value);
+
+    /// Gets the count of found options.
+    ///
+    /// \return Returns the count of found options.
+    int OptionsCount() const;
+
+    /// Parses the command line into and retrieves options and their arguments.
     ///
 	/// \param argc is the argument count.
-    /// \param argv is the array of char pointers with the argument values.
-    /// \return  Returns the number of found switches.
+    /// \param argv is the array of char pointers containing the argument values.
+    /// \return  Returns the number of found options.
     int Parse(int argc, char *argv[]);
 
+    /// Determines if an option is present or not.
     ///
-    bool HasSwitch(const char *text);
+    /// \param optionName is the long or short name of the option.
+    /// \return Returns true if the option was found, else false.
+    bool HasSwitch(const CString &optionName);
 
   protected:
-    /// 
-    bool IsSwitch(const char *text);
+    /// Determines for a given option name if this is a valid option
+    /// for this application or not.
+    ///
+    /// \param optionName is the long or short name of the switch.
+    /// \return Returns true if a switch with that name exists, else false.
+    bool IsSwitch(const CString &optionName);
+*/
 
   protected:
-    CMapStringToOb m_command_line;                         ///< Maps a String to a CStringList.
+    CMapStringToOb                                  m_retrieved_options;  ///< Maps a CString to a CStringList.
+    CList<MCommandLineOption, MCommandLineOption &> m_registered_options; ///< Supported options and default values.
 };

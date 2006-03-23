@@ -1,4 +1,4 @@
-// $Id: CommandLine.cpp,v 1.2 2006/02/23 14:45:07 gerrit-albrecht Exp $
+// $Id: CommandLine.cpp,v 1.3 2006/03/23 14:08:39 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -34,20 +34,20 @@ MCommandLine::~MCommandLine()
   Clear();
 }
 
-int MCommandLine::SwitchCount() const
-{
-  return static_cast<int>(m_command_line.GetCount());
-}
-
 void MCommandLine::Clear()
 {
-  POSITION pos = m_command_line.GetStartPosition();
+  POSITION pos;
+  int i;
+
+  // Clear retrieved options.
+
+  pos = m_retrieved_options.GetStartPosition();
 
   while (pos != NULL) {
     CString      key;
     CStringList *list;
 
-    m_command_line.GetNextAssoc(pos, key, (CObject *&)list);
+    m_retrieved_options.GetNextAssoc(pos, key, (CObject *&)list);
 
     if (list) {
       list->RemoveAll();                                   // Delete all items.
@@ -55,12 +55,58 @@ void MCommandLine::Clear()
       delete list;
     }
 
-    m_command_line.RemoveKey(key);
+    m_retrieved_options.RemoveKey(key);
   }
 
-  m_command_line.RemoveAll();                              // To be completely sure.
+  m_retrieved_options.RemoveAll();                         // To be completely sure.
+
+  // Clear registered options.
+
+  MCommandLineOption opt;
+
+  pos = m_registered_options.GetHeadPosition();
+
+  for (i=0; i < m_registered_options.GetCount(); i++) {
+    if (pos == NULL)
+      break;
+
+    opt = m_registered_options.GetNext(pos);
+  }
+
+  m_registered_options.RemoveAll();                        // To be completely sure.
 }
 
+void MCommandLine::RegisterOption(const MCommandLineOption &option)
+{
+  POSITION pos = m_registered_options.GetTailPosition();
+
+  m_registered_options.InsertAfter(pos, MCommandLineOption(option));
+}
+
+#if 0
+
+void MCommandLine::RegisterOption(const CString &shortName, const CString &longName /* = _T("") */,
+                                  const CString &helpText /* = _T("") */,
+                                  const CString &defaultValue /* = _T("") */,
+                                  bool required /* = false */)
+{
+}
+
+void MCommandLine::GetValue(const CString &optionName, CString &value)
+{
+  value = _T("");
+}
+
+int MCommandLine::OptionsCount() const
+{
+  return static_cast<int>(m_command_line.GetCount());
+}
+
+/*
+   If this is an MFC app, you can use the __argc and __argv macros from
+   you CYourWinApp::InitInstance() function in place of the standard argc 
+   and argv variables. 
+ */
 int MCommandLine::Parse(int argc, char *argv[])
 {
   int i;
@@ -70,7 +116,7 @@ int MCommandLine::Parse(int argc, char *argv[])
   Clear();
 
   for (i = 1; i < argc; i++) {                             // Skip the exe name, start with i = 1.
-    if (IsSwitch(argv[i])) {
+    if (IsSwitch(CString(argv[i]))) {
       key = argv[i];
 
       strings = new CStringList();
@@ -78,7 +124,7 @@ int MCommandLine::Parse(int argc, char *argv[])
 
     i++;
 
-    while (! IsSwitch(argv[i])) {
+    while (! IsSwitch(CString(argv[i]))) {
       strings->AddTail(CString(argv[i]));
     }
 
@@ -104,7 +150,7 @@ bool MCommandLine::HasSwitch(const char *text)
   return false;
 }
 
-bool MCommandLine::IsSwitch(const char *text)
+bool MCommandLine::IsSwitch(const CString &optionName)
 {
   if (text == NULL)
     return false;
@@ -117,3 +163,5 @@ bool MCommandLine::IsSwitch(const char *text)
 
   return false;
 }
+
+#endif

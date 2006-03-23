@@ -1,4 +1,4 @@
-// $Id: KeyboardLights.cpp,v 1.2 2006/02/07 18:38:35 gerrit-albrecht Exp $
+// $Id: KeyboardLights.cpp,v 1.3 2006/03/23 14:08:39 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -48,7 +48,7 @@ void MKeyboardLights::ToggleKey(unsigned char key)
   }
 }
 
-void MKeyboardLights::SetCapsLock(BOOL enable)
+void MKeyboardLights::SetCapsLock(bool enable)
 {
   if (enable) {
     if (! GetCapsLock())
@@ -60,7 +60,7 @@ void MKeyboardLights::SetCapsLock(BOOL enable)
   }
 }
 
-BOOL MKeyboardLights::GetCapsLock()
+bool MKeyboardLights::GetCapsLock()
 {
   return (::GetKeyState(VK_CAPITAL) & 0x0001);
 }
@@ -70,7 +70,7 @@ void MKeyboardLights::ToggleCapsLock()
   ToggleKey(VK_CAPITAL);
 }
 
-void MKeyboardLights::SetScrollLock(BOOL enable)
+void MKeyboardLights::SetScrollLock(bool enable)
 {
   if (enable) {
     if (! GetScrollLock())
@@ -82,7 +82,7 @@ void MKeyboardLights::SetScrollLock(BOOL enable)
   }
 }
 
-BOOL MKeyboardLights::GetScrollLock()
+bool MKeyboardLights::GetScrollLock()
 {
   return (::GetKeyState(VK_SCROLL) & 0x0001);
 }
@@ -92,7 +92,7 @@ void MKeyboardLights::ToggleScrollLock()
   ToggleKey(VK_SCROLL);
 }
 
-void MKeyboardLights::SetNumLock(BOOL enable)
+void MKeyboardLights::SetNumLock(bool enable)
 {
   if (enable) {
     if (! GetNumLock())
@@ -104,7 +104,7 @@ void MKeyboardLights::SetNumLock(BOOL enable)
   }
 }
 
-BOOL MKeyboardLights::GetNumLock()
+bool MKeyboardLights::GetNumLock()
 {
   return (::GetKeyState(VK_NUMLOCK) & 0x0001);
 }
