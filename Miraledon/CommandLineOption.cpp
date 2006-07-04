@@ -1,4 +1,4 @@
-// $Id: CommandLineOption.cpp,v 1.2 2006/03/23 14:08:39 gerrit-albrecht Exp $
+// $Id: CommandLineOption.cpp,v 1.3 2006/07/04 08:09:59 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -35,8 +35,10 @@ MCommandLineOption::MCommandLineOption()
   m_current_value = _T("");
 }
 
-MCommandLineOption::MCommandLineOption(const CString &shortName, const CString &longName, const CString &helpText,
-                                       const OptionType type /* = INTEGER */, const CString &defaultValue /* = _T("") */)
+MCommandLineOption::MCommandLineOption(const CString &shortName, const CString &longName,
+                                       const CString &helpText,
+                                       const OptionType type /* = INTEGER */,
+                                       const CString &defaultValue /* = _T("") */)
 {
   m_short         = shortName;
   m_long          = longName;

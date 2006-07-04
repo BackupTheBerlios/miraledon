@@ -1,4 +1,4 @@
-// $Id: CommandLineOption.h,v 1.1 2006/03/23 13:41:17 gerrit-albrecht Exp $
+// $Id: CommandLineOption.h,v 1.2 2006/07/04 08:09:59 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -39,9 +39,10 @@ class AFX_EXT_CLASS MCommandLineOption : public CObject
     MCommandLineOption();
 
     /// Standard constructor.
-    MCommandLineOption(const CString &shortName, const CString &longName, const CString &helpText = _T(""),
-                       const OptionType type = INTEGER, const CString &defaultValue = _T(""));
-
+    MCommandLineOption(const CString &shortName, const CString &longName,
+                       const CString &helpText = _T(""),
+                       const OptionType type = INTEGER,
+                       const CString &defaultValue = _T(""));
     /// Copy constructor.
     MCommandLineOption(const MCommandLineOption &other);
 

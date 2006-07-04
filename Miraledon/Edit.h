@@ -1,4 +1,4 @@
-// $Id: Edit.h,v 1.1 2006/02/08 21:29:20 gerrit-albrecht Exp $
+// $Id: Edit.h,v 1.2 2006/07/04 08:12:33 gerrit-albrecht Exp $
 //
 // Miraledon Class Library
 // Copyright (C) 2005, 2006 by Gerrit M. Albrecht
@@ -26,7 +26,7 @@
 
 /// \brief This is a better CEdit.
 ///
-/// This is an enhanced CEdit which provides e.g. numeric input.
+/// This is an enhanced CEdit which provides e.g. colored input.
 
 class AFX_EXT_CLASS MEdit : public CEdit
 {
