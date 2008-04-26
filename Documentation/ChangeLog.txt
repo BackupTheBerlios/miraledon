@@ -1,4 +1,8 @@
-$Id: ChangeLog.txt,v 1.9 2006/03/23 14:13:35 gerrit-albrecht Exp $
+$Id: ChangeLog.txt,v 1.10 2008/04/26 21:20:51 gerrit-albrecht Exp $
+
+2008-04-26  Gerrit M. Albrecht  <gerrit-albrecht@users.berlios.de>
+
+	* Compiles now with Visual Studio 2008. License upgraded to version 3.
 
 2005-03-23  Gerrit M. Albrecht  <gerrit-albrecht@users.berlios.de>
 

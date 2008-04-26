@@ -1,6 +1,6 @@
 Miraledon
 
-(c) 1996-2006 Gerrit M. Albrecht
+(c) 1996-2008 Gerrit M. Albrecht
 
 Miraledon is a class library which provides centrally maintained,
 free MFC classes which may be used without restrictions in own projects.
